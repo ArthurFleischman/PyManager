@@ -1,6 +1,27 @@
 from PyQt5 import QtGui
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow,QLabel
 import sys
+import mysql.connector
+
+class Mysql():
+    def __init__(self,host,user,passwd):
+        self.host = host
+        self.user = user
+        self.passwd = passwd
+        self.mydb = mysql.connector.connect(
+            host=self.host,
+            user=self.user,
+            passwd=self.passwd
+        )
+        self.mycursor = self.mydb.cursor()
+
+    def usedatabase(self,db):
+        self.mycursor.execute('use '+db)
+
+    def select(self,x,y):
+        self.mycursor.execute(f'select {x} from {y}')
+        result = self.mycursor.fetchall()
+        return result
 
 
 class Window(QMainWindow):
@@ -14,6 +35,8 @@ class Window(QMainWindow):
         self.width = 400
         self.height = 400
         self.icon = "icon path"
+        lbl = QLabel('hello world', self)
+        lbl.move(0,0)
         self.initwindow()
 
     def initwindow(self):
@@ -23,7 +46,14 @@ class Window(QMainWindow):
         self.show()
 
 
+
 if __name__ == '__main__':
+
+    db = Mysql('localhost','user','password')
+    db.usedatabase('database')      #use especific database
+    val = db.select('*','clients')  #get all data from clients
+    print(val)                      #print all data
+
     app = QApplication(sys.argv)
     window = Window()
     sys.exit(app.exec_())
