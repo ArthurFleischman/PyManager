@@ -1,11 +1,6 @@
 from PyQt5 import QtWidgets,uic
 import mysql.connector
-'''
-app = QtWidgets.QApplication([])
-dlg = uic.loadUi('window.ui')
-dlg.ti_username.setFocus()
-dlg.show()
-app.exec()'''
+
 
 class Mysql():
     def __init__(self,host,user,passwd):
