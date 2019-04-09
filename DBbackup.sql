@@ -28,11 +28,12 @@ CREATE TABLE `clients` (
   `password` varchar(30) NOT NULL DEFAULT '',
   `name` varchar(30) NOT NULL,
   `birthday` date NOT NULL,
-  `cpf` bigint(20) NOT NULL,
-  `adm` tinyint(1) NOT NULL DEFAULT '0',
+  `cpf` varchar(11) NOT NULL DEFAULT '00000000000',
+  `status` enum('adm','employee','client','undefined') DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `cpf_2` (`cpf`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +43,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'TKfleBR','mindstorms','Arthur Cabral Fleischman','2000-06-22',13382481464,1),(2,'lts','lts','Lucas Tejo Sena','2000-05-29',9983594404,0),(3,'np','np','Nicole Louise Dantas Perez ','1996-09-01',0,0);
+INSERT INTO `clients` VALUES (1,'TKfleBR','mindstorms','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','undefined'),(3,'np','np','Nicole Louise Dantas Perez ','1996-09-01','0',NULL);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-09  1:38:25
+-- Dump completed on 2019-04-09 15:25:52

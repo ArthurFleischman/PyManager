@@ -33,7 +33,7 @@ class Login:
         self.window.btn.clicked.connect(self.match)
 
     def match(self):
-        luser = mydb.select('username,password,adm', 'clients')
+        luser = mydb.select('username,password,status', 'clients')
         user = self.window.ti_username.text()
         passw = self.window.ti_password.text()
 
