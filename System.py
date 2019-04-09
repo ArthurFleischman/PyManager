@@ -1,9 +1,9 @@
-from PyQt5 import QtWidgets,uic
+from PyQt5 import QtWidgets, uic
 import mysql.connector
 
 
-class Mysql():
-    def __init__(self,host,user,passwd):
+class Mysql:
+    def __init__(self, host, user, passwd):
         self.host = host
         self.user = user
         self.passwd = passwd
@@ -14,10 +14,10 @@ class Mysql():
         )
         self.cursor = self.mydb.cursor()
 
-    def use(self,data):
+    def use(self, data):
         self.cursor.execute('use '+data)
 
-    def select(self,x,y):
+    def select(self, x, y):
         self.cursor.execute(f'select {x} from {y}')
         val = self.cursor.fetchall()
         return val
@@ -33,27 +33,21 @@ class Login:
         self.window.btn.clicked.connect(self.match)
 
     def match(self):
-        luser = mydb.select('username,password,adm','clients')
+        luser = mydb.select('username,password,adm', 'clients')
         user = self.window.ti_username.text()
-        passw = self.window.ti_username.text()
+        passw = self.window.ti_password.text()
 
         for x in range(len(luser)):
             if user == luser[x][0] and passw == luser[x][1]:
-                self.window.lbl.setText('welcome '+luser[x][1])
+                self.window.lbl.setText(f'welcome {luser[x][0]}')
                 break
             elif x == len(luser)-1:
-                self.window.lbl.setText('wrong user or password')
-
-#future menu window
-class Menu():
-    def __init__(self):
-        self.window = uic.loadUi('')
+                self.window.lbl.setText('wrong username or password')
 
 
 if __name__ == '__main__':
-    mydb = Mysql('localhost','TKfleBR','arthuracf')
+    mydb = Mysql('localhost', 'TKfleBR', 'arthuracf')
     mydb.use('register')
     app = QtWidgets.QApplication([])
     win = Login()
     app.exec()
-
