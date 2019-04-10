@@ -29,9 +29,10 @@ class Mysql:
         try:
             self.cursor.execute(f"insert into clients values({uid}, '{username}', '{password}', '{name}', '{birthday}', '{cpf}','{status1}')")
         except:
-            self.mymsg.showmsg('warning','hi')
+            self.mymsg.showmsg('w','warning','hi')
         finally:
-            print('usuario cadastrado com sucesso')
+            self.mymsg.showmsg('m','Done!',f'{username} registered')
+            LoginWindow.MenuWindow.WindowRegister.win.close()
 
 
 class Controller(QtWidgets.QApplication):
@@ -40,8 +41,11 @@ class Controller(QtWidgets.QApplication):
         def __init__(self):
             pass
 
-        def showmsg(self,title,msg):
-            self.warning(None, title, msg)
+        def showmsg(self,type,title,msg):
+            if type == 'w':
+                self.warning(None, title, msg)
+            elif type == 'm':
+                self.information(None,title,msg)
 
     class Login:
         def __init__(self):
@@ -85,6 +89,7 @@ class Controller(QtWidgets.QApplication):
             self.win.show()
             self.win.register_btn2.pressed.connect(self.cancel)
             self.win.register_btn1.pressed.connect(self.register)
+            self.win.register_btn1.setFocus()
             self.rmsg = Controller.Msg()
 
         def register(self):
@@ -97,13 +102,13 @@ class Controller(QtWidgets.QApplication):
             status3 = self.win.register_cbox1.currentText()
             qwery = mydb.select('cpf,username', f"clients where cpf = '{cpf}' and username = '{username}' ")
 
-            if not qwery and (cpf != '' and username != ''):
+            if not qwery and (len(cpf) == 11 and username != ''):
                 if password == rpassword:
                     mydb.insert('default', username, password, name, birthday, cpf, status3)
                 else:
-                    self.rmsg.showmsg('warning','passwords are not alike')
+                    self.rmsg.showmsg('w','warning','passwords are not alike')
             else:
-                self.rmsg.showmsg('erro','erro')
+                self.rmsg.showmsg('w','erro','erro')
 
         def cancel(self):
             self.win.close()

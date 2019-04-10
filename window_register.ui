@@ -51,7 +51,7 @@
          <set>Qt::AlignCenter</set>
         </property>
         <property name="placeholderText">
-         <string>Birthday</string>
+         <string>Birthday(AAAA,MM,DD)</string>
         </property>
        </widget>
       </item>
