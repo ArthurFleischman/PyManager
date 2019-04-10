@@ -33,16 +33,13 @@ class Login:
         self.window.btn.clicked.connect(self.match)
 
     def match(self):
-        luser = mydb.select('username,password,status', 'clients')
         user = self.window.ti_username.text()
         passw = self.window.ti_password.text()
-
-        for x in range(len(luser)):
-            if user == luser[x][0] and passw == luser[x][1]:
-                self.window.lbl.setText(f'welcome {luser[x][0]}')
-                break
-            elif x == len(luser)-1:
-                self.window.lbl.setText('wrong username or password')
+        luser = mydb.select('username,status', f"clients where username = '{user}' and password = '{passw}' ")
+        if not luser:
+            self.window.lbl.setText('wrong user or password')
+        else:
+            self.window.lbl.setText(f'welcome {luser[0][0]}')
 
 
 if __name__ == '__main__':
