@@ -1,7 +1,8 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox
 import mysql.connector
-status = ('adm','employee','client','undefined')
+status = ('adm', 'employee', 'client', 'undefined')
+
 
 class Mysql:
     def __init__(self, host, user, passwd):
@@ -24,9 +25,9 @@ class Mysql:
         val = self.cursor.fetchall()
         return val
 
-    def insert(self, id, username, password, name, birthday, cpf, status1):
+    def insert(self, uid, username, password, name, birthday, cpf, status1):
         try:
-            self.cursor.execute(f"insert into clients values({id}, '{username}', '{password}', '{name}', '{birthday}', '{cpf}','{status1}')")
+            self.cursor.execute(f"insert into clients values({uid}, '{username}', '{password}', '{name}', '{birthday}', '{cpf}','{status1}')")
         except:
             self.mymsg.showmsg('warning','hi')
         finally:
@@ -95,7 +96,7 @@ class Controller(QtWidgets.QApplication):
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             status3 = self.win.register_cbox1.currentText()
-            qwery = mydb.select('cpf,username',f"clients where cpf = '{cpf}' and username = '{username}' ")
+            qwery = mydb.select('cpf,username', f"clients where cpf = '{cpf}' and username = '{username}' ")
 
             if not qwery and (cpf != '' and username != ''):
                 if password == rpassword:
