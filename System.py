@@ -59,7 +59,6 @@ class Controller(QtWidgets.QApplication):
             if not self.luser:
                 self.win.lbl.setText('wrong user or password')
             else:
-                self.win.lbl.setText(f'welcome {self.luser[0][0]}')
                 self.win.close()
                 self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
 
