@@ -31,7 +31,6 @@
     <addaction name="actionhistory"/>
     <addaction name="actionclients"/>
     <addaction name="actionemployees"/>
-    <addaction name="actionregister"/>
     <addaction name="separator"/>
     <addaction name="actionexit"/>
    </widget>

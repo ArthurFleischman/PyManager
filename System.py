@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QDateEdit
+from PyQt5.QtCore import Qt
 import mysql.connector
 status = ('adm', 'employee', 'client', 'undefined')
 
@@ -21,18 +22,30 @@ class Mysql:
         self.cursor.execute('use '+data)
 
     def select(self, x, y):
-        self.cursor.execute(f'select {x} from {y}')
-        val = self.cursor.fetchall()
-        return val
+        try:
+            self.cursor.execute(f'select {x} from {y}')
+        except:
+            self.mymsg('w', 'ERROR', 'user not found')
+        finally:
+            val = self.cursor.fetchall()
+            return val
 
     def insert(self, uid, username, password, name, birthday, cpf, status1):
         try:
             self.cursor.execute(f"insert into clients values({uid}, '{username}', '{password}', '{name}', '{birthday}', '{cpf}','{status1}')")
         except:
-            self.mymsg.showmsg('w','warning','hi')
+            self.mymsg.showmsg('w', 'warning', 'wrong values')
         finally:
-            self.mymsg.showmsg('m','Done!',f'{username} registered')
-            LoginWindow.MenuWindow.WindowRegister.win.close()
+            self.mymsg.showmsg('m', 'Done!', f'{username} registered')
+
+    def delete(self, tb, uid):
+        try:
+            self.cursor.execute(f"delete from {tb} where id ='{uid}'")
+        except:
+            self.mymsg.showmsg('w', 'warning', 'id not found')
+
+        finally:
+            self.mymsg.showmsg('m', 'Done!', 'user eleted')
 
 
 class Controller(QtWidgets.QApplication):
@@ -41,11 +54,11 @@ class Controller(QtWidgets.QApplication):
         def __init__(self):
             pass
 
-        def showmsg(self,type,title,msg):
+        def showmsg(self, type,title, msg):
             if type == 'w':
                 self.warning(None, title, msg)
             elif type == 'm':
-                self.information(None,title,msg)
+                self.information(None, title, msg)
 
     class Login:
         def __init__(self):
@@ -59,27 +72,66 @@ class Controller(QtWidgets.QApplication):
         def match(self):
             user = self.win.ti_username.text()
             passw = self.win.ti_password.text()
-            self.luser = mydb.select('username,status', f"clients where username = '{user}' and password = '{passw}' ")
-            if not self.luser:
-                self.win.lbl.setText('wrong user or password')
+            if user =="'" or passw == "'":
+                self.wmessage()
             else:
-                self.win.close()
-                self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
+                self.luser = mydb.select('username,status', f"clients where username = '{user}' and password = '{passw}' ")
+                if not self.luser:
+                    self.wmessage()
+                else:
+                    self.win.hide()
+                    self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
+
+        def wmessage(self):
+            self.win.lbl.setText("<font color='red'>wrong user or password</font>")
 
     class Menu:
         def __init__(self, title, status2):
             self.win = uic.loadUi('window_menu.ui')
             self.win.setWindowTitle(f'{title}-{status2}')
-            self.win.actionregister.triggered.connect(self.register)
             self.win.actionexit.triggered.connect(self.logoff)
+            self.win.actionclients.triggered.connect(self.clients)
             self.win.show()
 
-        def register(self):
-            self.WindowRegister = Controller.Regsiter()
+        def clients(self):
+            self.WindowClients = Controller.Clients()
 
         def logoff(self):
             self.win.close()
             LoginWindow.__init__()
+
+    class Clients:
+        def __init__(self):
+            self.win = uic.loadUi('window_clients.ui')
+            self.refresh()
+            self.win.client_btn1.pressed.connect(self.add)
+            self.win.client_btn2.pressed.connect(self.remove)
+            self.win.client_btn3.pressed.connect(self.close)
+            self.ctext = Controller.Msg()
+            self.win.show()
+
+        def add(self):
+            self.WindowRegister = Controller.Regsiter()
+
+        def remove(self):
+            if self.clients:
+                row = self.win.client_lw.currentRow()
+                item = (str(self.win.client_lw.item(row).text()))
+                uid = mydb.select('id', f"clients where name = '{item}'")
+                mydb.delete('clients', f"{uid[0][0]}")
+                self.win.client_lw.takeItem(row)
+                self.refresh()
+            else:
+                self.ctext.showmsg('m','ERROR','no clients to delete')
+        def close(self):
+            self.win.close()
+
+        def refresh(self):
+            self.win.client_lw.clear()
+            self.clients = mydb.select('name,status', "clients where status = 'client' order by name")
+            for x in range(len(self.clients)):
+                    self.win.client_lw.addItem(self.clients[x][0])
+
 
     class Regsiter:
         def __init__(self):
@@ -94,22 +146,23 @@ class Controller(QtWidgets.QApplication):
 
         def register(self):
             name = self.win.register_ti1.text()
-            birthday = self.win.register_ti2.text()
+            birthday = self.win.client_de.date().toString(Qt.ISODate).split('-')
+            birthday = ''.join(birthday)
             cpf = self.win.register_ti3.text()
             username = self.win.register_ti4.text()
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             status3 = self.win.register_cbox1.currentText()
             qwery = mydb.select('cpf,username', f"clients where cpf = '{cpf}' and username = '{username}' ")
-
             if not qwery and (len(cpf) == 11 and username != ''):
                 if password == rpassword:
                     mydb.insert('default', username, password, name, birthday, cpf, status3)
+                    self.win.close()
+                    LoginWindow.MenuWindow.WindowClients.refresh()
                 else:
                     self.rmsg.showmsg('w','warning','passwords are not alike')
             else:
                 self.rmsg.showmsg('w','erro','erro')
-
         def cancel(self):
             self.win.close()
 
