@@ -2,8 +2,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox, QDateEdit
 from PyQt5.QtCore import Qt
 import mysql.connector
-status = ('adm', 'employee', 'client', 'undefined')
-
+status = ('adm','employee','client','undefined')
 
 class Mysql:
     def __init__(self, host, user, passwd):
@@ -71,16 +70,17 @@ class Controller(QtWidgets.QApplication):
 
         def match(self):
             user = self.win.ti_username.text()
+            user = user.split("'")
+            user = ''.join(user)
             passw = self.win.ti_password.text()
-            if user =="'" or passw == "'":
+            passw = passw.split("'")
+            passw = ''.join(passw)
+            self.luser = mydb.select('username,status', f"clients where username = '{user}' and password = '{passw}' ")
+            if not self.luser:
                 self.wmessage()
             else:
-                self.luser = mydb.select('username,status', f"clients where username = '{user}' and password = '{passw}' ")
-                if not self.luser:
-                    self.wmessage()
-                else:
-                    self.win.hide()
-                    self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
+                self.win.hide()
+                self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
 
         def wmessage(self):
             self.win.lbl.setText("<font color='red'>wrong user or password</font>")
