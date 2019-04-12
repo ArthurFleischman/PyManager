@@ -91,7 +91,7 @@ class Controller(QtWidgets.QApplication):
             self.win.setWindowTitle(f'{title}-{status2}')
             self.win.actionexit.triggered.connect(self.logoff)
             self.win.actionclients.triggered.connect(self.clients)
-            self.win.show()
+            self.win.showMaximized()
 
         def clients(self):
             self.WindowClients = Controller.Clients()
