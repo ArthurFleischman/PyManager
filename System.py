@@ -44,7 +44,7 @@ class Mysql:
             self.mymsg.showmsg('w', 'warning', 'id not found')
 
         finally:
-            self.mymsg.showmsg('m', 'Done!', 'user eleted')
+            self.mymsg.showmsg('m', 'Done!', 'user deleted')
 
 
 class Controller(QtWidgets.QApplication):
@@ -119,7 +119,6 @@ class Controller(QtWidgets.QApplication):
                 item = (str(self.win.client_lw.item(row).text()))
                 uid = mydb.select('id', f"clients where name = '{item}'")
                 mydb.delete('clients', f"{uid[0][0]}")
-                self.win.client_lw.takeItem(row)
                 self.refresh()
             else:
                 self.ctext.showmsg('m','ERROR','no clients to delete')
@@ -148,13 +147,16 @@ class Controller(QtWidgets.QApplication):
             name = self.win.register_ti1.text()
             birthday = self.win.client_de.date().toString(Qt.ISODate).split('-')
             birthday = ''.join(birthday)
+
             cpf = self.win.register_ti3.text()
             username = self.win.register_ti4.text()
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             status3 = self.win.register_cbox1.currentText()
+
             qwery = mydb.select('cpf,username', f"clients where cpf = '{cpf}' and username = '{username}' ")
-            if not qwery and (len(cpf) == 11 and username != ''):
+
+            if not qwery and len(cpf) == 11 and username != '':
                 if password == rpassword:
                     mydb.insert('default', username, password, name, birthday, cpf, status3)
                     self.win.close()
