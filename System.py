@@ -194,6 +194,7 @@ class Controller(QtWidgets.QApplication):
                     self.rmsg.showmsg('w','warning','passwords are not alike')
             else:
                 self.rmsg.showmsg('w','erro','erro')
+
         def cancel(self):
             self.win.close()
 
