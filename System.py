@@ -46,6 +46,18 @@ class Mysql:
         finally:
             self.mymsg.showmsg('m', 'Done!', 'user deleted')
 
+    def update(self, x, y):
+        try:
+            self.cursor.execute(f"update clients set id = '{x}' where id = '{y}'")
+        except:
+            self.mymsg.showmsg('w', 'ERROR', 'ERROR')
+
+    def alter(self, x, y):
+        try:
+            self.cursor.execute(f'alter table {x} {y}')
+        except:
+            self.mymsg.showmsg('w', 'ERROR', 'ERROR')
+
 
 class Controller(QtWidgets.QApplication):
 
@@ -107,7 +119,7 @@ class Controller(QtWidgets.QApplication):
             self.win.client_btn1.pressed.connect(self.add)
             self.win.client_btn2.pressed.connect(self.remove)
             self.win.client_btn3.pressed.connect(self.close)
-            self.ctext = Controller.Msg()
+            self.cmsg = Controller.Msg()
             self.win.show()
 
         def add(self):
@@ -119,15 +131,32 @@ class Controller(QtWidgets.QApplication):
                 item = (str(self.win.client_lw.item(row).text()))
                 uid = mydb.select('id', f"clients where name = '{item}'")
                 mydb.delete('clients', f"{uid[0][0]}")
+                self.organize()
                 self.refresh()
             else:
-                self.ctext.showmsg('m','ERROR','no clients to delete')
+                self.cmsg.showmsg('w', 'ERROR', 'no clients to delete')
+            self.organize()
+
+        def organize(self):
+            l1 = mydb.select('id', 'clients')
+            x = []
+            for w in range(len(l1)):
+                x.append(l1[w][0])
+            for w in range(len(x)):
+                if w + 1 < len(x):
+                    while x[w] != (x[w + 1] - 1):
+                        x[w + 1] -= 1
+                if x[w] != l1[w][0]:
+                    mydb.update(f'{x[w]}', f'{l1[w][0]}')
+
+            mydb.alter('clients', f'AUTO_INCREMENT = {x[-1]}')
+
         def close(self):
             self.win.close()
 
         def refresh(self):
             self.win.client_lw.clear()
-            self.clients = mydb.select('name,status', "clients where status = 'client' order by name")
+            self.clients = mydb.select('name', "clients where status = 'client' order by name")
             for x in range(len(self.clients)):
                     self.win.client_lw.addItem(self.clients[x][0])
 
