@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QMessageBox, QDateEdit
+from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtCore import Qt
 import mysql.connector
 status = ('adm','employee','client','undefined')
