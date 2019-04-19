@@ -16,17 +16,17 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `clients`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `clients`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `clients` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(10) NOT NULL,
   `password` varchar(30) NOT NULL DEFAULT '',
-  `name` varchar(30) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `birthday` date NOT NULL,
   `cpf` varchar(11) NOT NULL DEFAULT '00000000000',
   `status` enum('adm','employee','client','undefined') NOT NULL DEFAULT 'undefined',
@@ -34,17 +34,17 @@ CREATE TABLE `clients` (
   UNIQUE KEY `cpf` (`cpf`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `cpf_2` (`cpf`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `clients`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `clients` WRITE;
-/*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'TKfleBR','mindstorms','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(3,'np','np','Nicole Louise Dantas Perez ','1996-09-01','0','client'),(4,'brunal','1234','Bruna Lins','1995-04-06','7809425483','client');
-/*!40000 ALTER TABLE `clients` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'TKfleBR','mindstorms','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(7,'w','w','w','2000-01-01','12345678987','employee');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-09 22:03:58
+-- Dump completed on 2019-04-19  1:04:06

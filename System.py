@@ -35,7 +35,6 @@ class Controller(QApplication):
         def wmessage(self):
             self.win.lbl.setText("<font color='red'>wrong user or password</font>")
 
-
     class Menu:
         def __init__(self, title, statusm):
             self.win = Menu()
