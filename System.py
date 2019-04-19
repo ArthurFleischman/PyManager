@@ -25,7 +25,7 @@ class Controller(QApplication):
             passw = self.win.ti_password.text()
             passw = passw.split("'")
             passw = ''.join(passw)
-            self.luser = mydb.select('username,status', f"clients where username = '{user}' and password = '{passw}' ")
+            self.luser = mydb.select('username,status', f"users where username = '{user}' and password = '{passw}' ")
             if not self.luser:
                 self.wmessage()
             else:
@@ -39,7 +39,8 @@ class Controller(QApplication):
     class Menu:
         def __init__(self, title, statusm):
             self.win = Menu()
-            self.win.setupUi()
+            self.win.setupUi(statusm)
+            self.win.setupUi(statusm)
             self.win.show()
             # widgets functions
             self.win.actionexit.triggered.connect(self.logoff)
@@ -73,8 +74,8 @@ class Controller(QApplication):
             if self.clients:
                 row = self.win.client_lw.currentRow()
                 item = (str(self.win.client_lw.item(row).text()))
-                uid = mydb.select('id', f"clients where name = '{item}'")
-                mydb.delete('clients', f"{uid[0][0]}")
+                uid = mydb.select('id', f"users where name = '{item}'")
+                mydb.delete('users', f"{uid[0][0]}")
                 self.refresh()
             else:
                 QMessageBox.warning(None, 'ERROR', 'no clients to delete')
@@ -84,7 +85,7 @@ class Controller(QApplication):
 
         def refresh(self):
             self.win.client_lw.clear()
-            self.clients = mydb.select('name', "clients where status = 'client' order by name")
+            self.clients = mydb.select('name', "users where status = 'client' order by name")
             for x in range(len(self.clients)):
                     self.win.client_lw.addItem(self.clients[x][0])
 
@@ -109,9 +110,9 @@ class Controller(QApplication):
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
 
-            query = mydb.select('cpf,username', f"clients where cpf = '{cpf}' or username = '{username}' ")
+            query = mydb.select('cpf,username', f"users where cpf = '{cpf}' or username = '{username}' ")
             if not query and len(cpf) == 11 and username != '' and password == rpassword:
-                mydb.insert('clients','default', username, password, name, birthday, cpf, statusr)
+                mydb.insert('users','default', username, password, name, birthday, cpf, statusr)
                 self.win.close()
                 LoginWindow.MenuWindow.WindowClients.refresh()
             else:

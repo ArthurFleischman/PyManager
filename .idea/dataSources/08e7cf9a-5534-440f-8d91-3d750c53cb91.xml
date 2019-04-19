@@ -1096,7 +1096,7 @@
     <view id="289" parent="2" name="VIEWS">
       <System>1</System>
     </view>
-    <table id="290" parent="5" name="clients">
+    <table id="290" parent="5" name="users">
       <Collation>utf8_general_ci</Collation>
     </table>
     <column id="291" parent="229" name="CHARACTER_SET_NAME">
