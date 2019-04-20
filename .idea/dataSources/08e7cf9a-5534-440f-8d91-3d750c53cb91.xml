@@ -3980,7 +3980,6 @@
       <Position>7</Position>
       <DataType>enum(&apos;adm&apos;, &apos;employee&apos;, &apos;client&apos;, &apos;undefined&apos;)|0e</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;undefined&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="904" parent="290" name="username">

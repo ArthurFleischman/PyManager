@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtCore import Qt
-from window_clients import Client
+from window_users import User
 from window_login import Login
 from window_menu import Menu
 from window_register import Register
@@ -49,30 +49,37 @@ class Controller(QApplication):
             self.luser = ''
 
         def clients(self):
-            self.WindowClients = Controller.Clients()
+            self.WindowClients = Controller.Users()
 
         def logoff(self):
             self.win.close()
             LoginWindow.__init__()
 
-    class Clients:
+    class Users:
         def __init__(self):
-            self.win = Client()
+            self.choice = ''
+            self.win = User()
             self.win.setupUi()
             self.win.show()
+            for x in status:
+                if LoginWindow.luser[0][1] == 'employee' and (x == 'adm' or x == 'employee'):
+                    continue
+                else:
+                    self.win.user_cbox.addItem(x)
             self.refresh()
             # widgets functions
-            self.win.client_btn1.pressed.connect(self.add)
-            self.win.client_btn2.pressed.connect(self.remove)
-            self.win.client_btn3.pressed.connect(self.close)
+            self.win.user_btn1.pressed.connect(self.add)
+            self.win.user_btn2.pressed.connect(self.remove)
+            self.win.user_btn3.pressed.connect(self.close)
 
+            self.choice = self.win.user_cbox.currentTextChanged.connect(self.refresh)
         def add(self):
             self.WindowRegister = Controller.Register()
 
         def remove(self):
-            if self.clients:
-                row = self.win.client_lw.currentRow()
-                item = (str(self.win.client_lw.item(row).text()))
+            if self.users:
+                row = self.win.user_lw.currentRow()
+                item = (str(self.win.user_lw.item(row).text()))
                 uid = mydb.select('id', f"users where name = '{item}'")
                 mydb.delete('users', f"{uid[0][0]}")
                 self.refresh()
@@ -83,10 +90,11 @@ class Controller(QApplication):
             self.win.close()
 
         def refresh(self):
-            self.win.client_lw.clear()
-            self.clients = mydb.select('name', "users where status = 'client' order by name")
-            for x in range(len(self.clients)):
-                    self.win.client_lw.addItem(self.clients[x][0])
+            self.win.user_lw.clear()
+            self.choice = self.win.user_cbox.currentText()
+            self.users = mydb.select('name', f"users where status = '{self.choice}' order by name")
+            for x in range(len(self.users)):
+                    self.win.user_lw.addItem(self.users[x][0])
 
     class Register:
         def __init__(self):
