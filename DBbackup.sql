@@ -29,12 +29,12 @@ CREATE TABLE `users` (
   `name` varchar(40) NOT NULL,
   `birthday` date NOT NULL,
   `cpf` varchar(11) NOT NULL DEFAULT '00000000000',
-  `status` enum('adm','employee','client','undefined') NOT NULL DEFAULT 'undefined',
+  `status` enum('adm','employee','client','undefined') NOT NULL default 'undefined',
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `cpf_2` (`cpf`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'TKfleBR','mindstorms','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(7,'w','w','w','2000-01-01','12345678987','employee');
+INSERT INTO `users` VALUES (2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(1,'TKfleBR','master','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(9,'w','w','w','2000-01-01','12345678765','employee'),(10,'e','e','e','2000-01-01','12345678908','employee'),(11,'r','r','r','2000-01-01','12334567876','client'),(12,'t','t','t','2000-01-01','12334567865','undefined');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-19  1:04:06
+-- Dump completed on 2019-04-19 21:30:17

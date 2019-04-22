@@ -10,6 +10,7 @@ status = ('adm', 'employee', 'client', 'undefined')
 
 
 class Controller(QApplication):
+
     class Login:
         def __init__(self):
             self.win = Login()
@@ -45,8 +46,7 @@ class Controller(QApplication):
             self.win.actionexit.triggered.connect(self.logoff)
             self.win.actionclients.triggered.connect(self.clients)
             self.win.showMaximized()
-            self.win.setWindowTitle(f'{title}-{statusm}')
-            self.luser = ''
+            self.win.setWindowTitle(f'{title}-{statusm}') 
 
         def clients(self):
             self.WindowClients = Controller.Users()
