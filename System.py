@@ -71,8 +71,10 @@ class Controller(QApplication):
             self.win.user_btn1.pressed.connect(self.add)
             self.win.user_btn2.pressed.connect(self.remove)
             self.win.user_btn3.pressed.connect(self.close)
+            self.win.user_btn4.pressed.connect(self.edit)
 
             self.choice = self.win.user_cbox.currentTextChanged.connect(self.refresh)
+
         def add(self):
             self.WindowRegister = Controller.Register()
 
@@ -89,10 +91,14 @@ class Controller(QApplication):
         def close(self):
             self.win.close()
 
+        def edit(self):
+            print((str(self.win.user_lw.item(self.win.user_lw.currentRow()).text())))
+            self.edit = Controller.Edit()
+
         def refresh(self):
             self.win.user_lw.clear()
             self.choice = self.win.user_cbox.currentText()
-            self.users = mydb.select('name', f"users where status = '{self.choice}' order by name")
+            self.users = mydb.select('username', f"users where status = '{self.choice}' order by name")
             for x in range(len(self.users)):
                     self.win.user_lw.addItem(self.users[x][0])
 
@@ -103,7 +109,7 @@ class Controller(QApplication):
             self.win.show()
             for x in status:
                 self.win.register_cbox1.addItem(x)
-            self.win.register_btn2.pressed.connect(self.cancel)
+            self.win.register_btn2.pressed.connect(self.win.close)
             self.win.register_btn1.pressed.connect(self.register)
             self.win.register_btn1.setFocus()
 
@@ -125,8 +131,20 @@ class Controller(QApplication):
             else:
                 QMessageBox.warning(None,'erro','erro')
 
-        def cancel(self):
-            self.win.close()
+    class Edit:
+        def __init__(self):
+            self.win = Register()
+            self.win.setupUi()
+            self.win.show()
+            self.win.setWindowTitle('update - ')
+            for x in status:
+                self.win.register_cbox1.addItem(x)
+            self.win.register_btn2.pressed.connect(self.win.close)
+            self.win.register_btn1.pressed.connect(self.update)
+            self.win.register_btn1.setFocus()
+
+        def update(self):
+            pass
 
 
 if __name__ == '__main__':

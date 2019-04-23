@@ -51,6 +51,9 @@ class User(QMainWindow):
         self.user_btn1 = QtWidgets.QPushButton(self.centralwidget)
         self.user_btn1.setObjectName("user_btn1")
         self.verticalLayout.addWidget(self.user_btn1)
+        self.user_btn4 = QtWidgets.QPushButton(self.centralwidget)
+        self.user_btn4.setObjectName("user_btn4")
+        self.verticalLayout.addWidget(self.user_btn4)
         self.user_btn2 = QtWidgets.QPushButton(self.centralwidget)
         self.user_btn2.setObjectName("user_btn2")
         self.verticalLayout.addWidget(self.user_btn2)
@@ -68,6 +71,7 @@ class User(QMainWindow):
         self.setWindowTitle(_translate("MainWindow", "Users"))
         self.label.setText(_translate("MainWindow", "Users List"))
         self.user_btn1.setText(_translate("MainWindow", "Add"))
+        self.user_btn4.setText(_translate("MainWindow", "Edit"))
         self.user_btn2.setText(_translate("MainWindow", "Delete"))
         self.user_btn3.setText(_translate("MainWindow", "Close"))
 
