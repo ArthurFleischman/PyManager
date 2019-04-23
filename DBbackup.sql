@@ -43,7 +43,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(1,'TKfleBR','master','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(9,'w','w','w','2000-01-01','12345678765','employee'),(10,'e','e','e','2000-01-01','12345678908','employee'),(11,'r','r','r','2000-01-01','12334567876','client'),(12,'t','t','t','2000-01-01','12334567865','undefined');
+INSERT INTO `users` VALUES  (3, 'dfa', 'dfa', 'Daidson Fonseca Alves', '1991-06-27', '08928633400', 'adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(1,'TKfleBR','master','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(9,'w','w','w','2000-01-01','12345678765','employee'),(10,'e','e','e','2000-01-01','12345678908','employee'),(11,'r','r','r','2000-01-01','12334567876','client'),(12,'t','t','t','2000-01-01','12334567865','undefined');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
