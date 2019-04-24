@@ -92,9 +92,10 @@ class Controller(QApplication):
             self.win.close()
 
         def edit(self):
-            select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
-            self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username ='{select_username}'")
-            self.edit = Controller.Edit()
+            if self.win.user_lw.currentRow() != -1:
+                select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
+                self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username ='{select_username}'")
+                self.edit = Controller.Edit()
 
         def refresh(self):
             self.win.user_lw.clear()
@@ -144,14 +145,15 @@ class Controller(QApplication):
             self.win.register_btn1.pressed.connect(self.update)
             self.win.register_btn1.setFocus()
 
-            data = LoginWindow.MenuWindow.WindowClients.data
-            self.win.register_ti1.setText(data[0][0])
-            self.win.client_de.setDate(data[0][1])
-            self.win.register_ti3.setText(data[0][2])
-            self.win.register_ti4.setText(data[0][3])
-            self.win.register_ti5.setText(data[0][4])
-            self.win.register_ti6.setText(data[0][4])
-            self.win.register_cbox1.setCurrentText(data[0][5])
+            self.data = LoginWindow.MenuWindow.WindowClients.data
+            self.win.register_ti1.setText(self.data[0][0])
+            self.win.client_de.setDate(self.data[0][1])
+            self.win.register_ti3.setText(self.data[0][2])
+            self.win.register_ti4.setText(self.data[0][3])
+            self.win.register_ti5.setText(self.data[0][4])
+            self.win.register_ti4.setReadOnly(True)
+            self.win.register_ti6.setText(self.data[0][4])
+            self.win.register_cbox1.setCurrentText(self.data[0][5])
 
         def update(self):
             name = self.win.register_ti1.text()
@@ -162,10 +164,10 @@ class Controller(QApplication):
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
-
-            # make a query just to modify 'modified' columns
-
-
+            if username == self.data[0][3] and password == rpassword:
+                mydb.update('users', f"name = '{name}',birthday = '{birthday}',cpf = '{cpf}',password='{password}', status='{statusr}' where username = '{username}'")
+                self.win.close()
+                LoginWindow.MenuWindow.WindowClients.refresh()
 
 
 if __name__ == '__main__':

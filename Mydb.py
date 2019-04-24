@@ -57,7 +57,8 @@ class Mysql:
             self.cursor.execute(f"update {table} set {data}")
         except:
             QMessageBox.warning(None, 'ERROR', 'could not update')
-
+        else:
+            QMessageBox.information(None,'DONE!','users updated')
     def alter(self, table, data):
         try:
             self.cursor.execute(f'alter table {table} {data}')
