@@ -28,7 +28,7 @@ class Mysql:
 
     def select(self, data, table):
         try:
-            self.cursor.execute(f'select {data} from {table}')
+            self.cursor.execute(f"select {data} from {table}")
         except:
             QMessageBox.warning(None, 'ERROR', 'user not found')
         else:
