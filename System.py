@@ -92,7 +92,8 @@ class Controller(QApplication):
             self.win.close()
 
         def edit(self):
-            print((str(self.win.user_lw.item(self.win.user_lw.currentRow()).text())))
+            select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
+            self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username ='{select_username}'")
             self.edit = Controller.Edit()
 
         def refresh(self):
@@ -143,8 +144,28 @@ class Controller(QApplication):
             self.win.register_btn1.pressed.connect(self.update)
             self.win.register_btn1.setFocus()
 
+            data = LoginWindow.MenuWindow.WindowClients.data
+            self.win.register_ti1.setText(data[0][0])
+            self.win.client_de.setDate(data[0][1])
+            self.win.register_ti3.setText(data[0][2])
+            self.win.register_ti4.setText(data[0][3])
+            self.win.register_ti5.setText(data[0][4])
+            self.win.register_ti6.setText(data[0][4])
+            self.win.register_cbox1.setCurrentText(data[0][5])
+
         def update(self):
-            pass
+            name = self.win.register_ti1.text()
+            birthday = self.win.client_de.date().toString(Qt.ISODate).split('-')
+            birthday = ''.join(birthday)
+            cpf = self.win.register_ti3.text()
+            username = self.win.register_ti4.text()
+            password = self.win.register_ti5.text()
+            rpassword = self.win.register_ti6.text()
+            statusr = self.win.register_cbox1.currentText()
+
+            # make a query just to modify 'modified' columns
+
+
 
 
 if __name__ == '__main__':
