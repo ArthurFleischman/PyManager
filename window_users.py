@@ -74,4 +74,3 @@ class User(QMainWindow):
         self.user_btn4.setText(_translate("MainWindow", "Edit"))
         self.user_btn2.setText(_translate("MainWindow", "Delete"))
         self.user_btn3.setText(_translate("MainWindow", "Close"))
-

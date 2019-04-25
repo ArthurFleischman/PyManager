@@ -146,6 +146,7 @@ class Controller(QApplication):
             self.win.register_btn1.setFocus()
 
             self.data = LoginWindow.MenuWindow.WindowClients.data
+            self.win.register_btn1.setText('Save')
             self.win.register_ti1.setText(self.data[0][0])
             self.win.client_de.setDate(self.data[0][1])
             self.win.register_ti3.setText(self.data[0][2])
