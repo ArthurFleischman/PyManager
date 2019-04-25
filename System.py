@@ -26,7 +26,7 @@ class Controller(QApplication):
             passw = self.win.ti_password.text()
             passw = passw.split("'")
             passw = ''.join(passw)
-            self.luser = mydb.select('username,status', f"users where username = '{user}' and password = '{passw}' ")
+            self.luser = mydb.select('username,status', f"users where username = '{user}' and password = '{passw}'")
             if not self.luser:
                 self.wmessage()
             else:
