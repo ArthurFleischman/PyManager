@@ -82,7 +82,8 @@ class Controller(QApplication):
             if self.users:
                 row = self.win.user_lw.currentRow()
                 item = (str(self.win.user_lw.item(row).text()))
-                uid = mydb.select('id', f"users where name = '{item}'")
+                item.split('-')
+                uid = mydb.select('id', f"users where name = '{item[0]}'")
                 mydb.delete('users', f"{uid[0][0]}")
                 self.refresh()
             else:
@@ -94,15 +95,16 @@ class Controller(QApplication):
         def edit(self):
             if self.win.user_lw.currentRow() != -1:
                 select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
-                self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username ='{select_username}'")
+                select_username.split('-')
+                self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username ='{select_username[0]}'")
                 self.edit = Controller.Edit()
 
         def refresh(self):
             self.win.user_lw.clear()
             self.choice = self.win.user_cbox.currentText()
-            self.users = mydb.select('username', f"users where status = '{self.choice}' order by name")
+            self.users = mydb.select('username,name', f"users where status = '{self.choice}' order by name")
             for x in range(len(self.users)):
-                    self.win.user_lw.addItem(self.users[x][0])
+                    self.win.user_lw.addItem(f"{self.users[x][0]} - {self.users[x][1]}")
 
     class Register:
         def __init__(self):
@@ -138,7 +140,7 @@ class Controller(QApplication):
             self.win = Register()
             self.win.setupUi()
             self.win.show()
-            self.win.setWindowTitle('update - ')
+            self.win.setWindowTitle(f'update - {LoginWindow.MenuWindow.WindowClients.data[0][3]}')
             for x in status:
                 self.win.register_cbox1.addItem(x)
             self.win.register_btn2.pressed.connect(self.win.close)
