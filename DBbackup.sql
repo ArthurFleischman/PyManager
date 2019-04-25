@@ -3,6 +3,7 @@
 -- Host: 127.0.0.1    Database: register
 -- ------------------------------------------------------
 -- Server version	5.7.24
+use register;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -66,7 +67,7 @@ DROP TABLE IF EXISTS `wage`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wage`
 (
-  `id`        int(11)      NOT NULL AUTO_INCREMENT,
+  `id`        int(11)      NOT NULL AUTO_INCREMENT primary key ,
   `username`  varchar(10)  NOT NULL,
   `name`      varchar(100) NOT NULL,
   `wageDate`  date         NOT NULL,
