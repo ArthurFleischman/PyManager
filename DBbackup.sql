@@ -57,16 +57,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-04-19 21:30:17
-
-
-
-
-
-
-
-
-
-
 --
 -- Table structure for table `salary`
 --
@@ -74,12 +64,14 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `wage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(10) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `wageDate` date NOT NULL,
-  `wageValue` real(10) NOT NULL, 
+CREATE TABLE `wage`
+(
+  `id`        int(11)      NOT NULL AUTO_INCREMENT,
+  `username`  varchar(10)  NOT NULL,
+  `name`      varchar(100) NOT NULL,
+  `wageDate`  date         NOT NULL,
+  `wageValue` float(10)    NOT NULL
+);
 /*
 
 
