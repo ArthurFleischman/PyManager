@@ -82,7 +82,7 @@ class Controller(QApplication):
             if self.users:
                 row = self.win.user_lw.currentRow()
                 item = (str(self.win.user_lw.item(row).text()))
-                item.split('-')
+                item = item.split(' - ')
                 uid = mydb.select('id', f"users where name = '{item[0]}'")
                 mydb.delete('users', f"{uid[0][0]}")
                 self.refresh()
@@ -95,8 +95,8 @@ class Controller(QApplication):
         def edit(self):
             if self.win.user_lw.currentRow() != -1:
                 select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
-                select_username.split('-')
-                self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username ='{select_username[0]}'")
+                select_username = select_username.split('-')
+                self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username = '{select_username[0]}'")
                 self.edit = Controller.Edit()
 
         def refresh(self):
