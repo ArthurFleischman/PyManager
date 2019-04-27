@@ -12,7 +12,8 @@ from PyQt5.QtWidgets import QMainWindow
 
 class Menu(QMainWindow):
 
-    def setupUi(self,cstatus):
+    def __init__(self,cstatus):
+        super().__init__()
         self.cstatus = cstatus
         self.setObjectName("MainWindow")
         self.resize(739, 457)
@@ -40,6 +41,7 @@ class Menu(QMainWindow):
         self.actionbuy.setObjectName("actionbuy")
         self.actionprofile = QtWidgets.QAction(self)
         self.actionprofile.setObjectName("actionprofile")
+
         #actions
         self.menuMenu.addAction(self.actionprofile)
         if self.cstatus == 'adm' or self.cstatus == 'employee':
@@ -53,6 +55,7 @@ class Menu(QMainWindow):
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+        self.show()
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -65,4 +68,5 @@ class Menu(QMainWindow):
         self.actionexit.setText(_translate("MainWindow", "Logoff"))
         self.actionbuy.setText(_translate("MainWindow", "Shop"))
         self.actionprofile.setText(_translate("MainWindow", "Profile"))
+
 

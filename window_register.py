@@ -11,7 +11,8 @@ from PyQt5.QtWidgets import QMainWindow
 
 
 class Register(QMainWindow):
-    def setupUi(self):
+    def __init__(self):
+        super().__init__()
         self.setObjectName("MainWindow")
         self.resize(513, 306)
         self.setMinimumSize(QtCore.QSize(513, 306))
@@ -79,6 +80,7 @@ class Register(QMainWindow):
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+        self.show()
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate

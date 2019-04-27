@@ -14,10 +14,8 @@ class Controller(QApplication):
     class Login:
         def __init__(self):
             self.win = Login()
-            self.win.setupUi()
-            self.win.show()
-            # widgets functions
             self.win.btn.clicked.connect(self.match)
+            self.checked = False
 
         def match(self):
             user = self.win.ti_username.text()
@@ -30,7 +28,11 @@ class Controller(QApplication):
             if not self.luser:
                 self.wmessage()
             else:
-                self.win.hide()
+                if self.win.rbtn.isChecked():
+                    self.checked = True
+                else:
+                    self.checked = False
+                self.win.close()
                 self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
 
         def wmessage(self):
@@ -38,29 +40,27 @@ class Controller(QApplication):
 
     class Menu:
         def __init__(self, title, statusm):
-            self.win = Menu()
-            self.win.setupUi(statusm)
-            self.win.setupUi(statusm)
-            self.win.show()
+            self.win = Menu(statusm)
             # widgets functions
             self.win.actionexit.triggered.connect(self.logoff)
             self.win.actionclients.triggered.connect(self.clients)
             self.win.showMaximized()
-            self.win.setWindowTitle(f'{title}-{statusm}') 
+            self.win.setWindowTitle(f'{title}-{statusm}')
 
         def clients(self):
-            self.WindowClients = Controller.Users()
+            self.WindowUsers = Controller.Users()
 
         def logoff(self):
-            self.win.close()
-            LoginWindow.__init__()
+            app.closeAllWindows()
+            LoginWindow.win.ti_password.setText('')
+            if not LoginWindow.checked:
+                LoginWindow.win.ti_username.setText('')
+            LoginWindow.win.show()
 
     class Users:
         def __init__(self):
             self.choice = ''
             self.win = User()
-            self.win.setupUi()
-            self.win.show()
             for x in status:
                 if LoginWindow.luser[0][1] == 'employee' and (x == 'adm' or x == 'employee'):
                     continue
@@ -70,12 +70,12 @@ class Controller(QApplication):
             # widgets functions
             self.win.user_btn1.pressed.connect(self.add)
             self.win.user_btn2.pressed.connect(self.remove)
-            self.win.user_btn3.pressed.connect(self.close)
+            self.win.user_btn3.pressed.connect(self.win.close)
             self.win.user_btn4.pressed.connect(self.edit)
-
             self.choice = self.win.user_cbox.currentTextChanged.connect(self.refresh)
 
         def add(self):
+            self.win.close()
             self.WindowRegister = Controller.Register()
 
         def remove(self):
@@ -89,15 +89,13 @@ class Controller(QApplication):
             else:
                 QMessageBox.warning(None, 'ERROR', 'no clients to delete')
 
-        def close(self):
-            self.win.close()
-
         def edit(self):
             if self.win.user_lw.currentRow() != -1:
                 select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
                 select_username = select_username.split('-')
                 self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username = '{select_username[0]}'")
-                self.edit = Controller.Edit()
+                self.win.close()
+                self.WindowEdit = Controller.Edit()
 
         def refresh(self):
             self.win.user_lw.clear()
@@ -109,11 +107,9 @@ class Controller(QApplication):
     class Register:
         def __init__(self):
             self.win = Register()
-            self.win.setupUi()
-            self.win.show()
             for x in status:
                 self.win.register_cbox1.addItem(x)
-            self.win.register_btn2.pressed.connect(self.win.close)
+            self.win.register_btn2.pressed.connect(self.close)
             self.win.register_btn1.pressed.connect(self.register)
             self.win.register_btn1.setFocus()
 
@@ -131,23 +127,25 @@ class Controller(QApplication):
             if not query and len(cpf) == 11 and username != '' and password == rpassword:
                 mydb.insert('users','default', username, password, name, birthday, cpf, statusr)
                 self.win.close()
-                LoginWindow.MenuWindow.WindowClients.refresh()
+                LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
                 QMessageBox.warning(None,'erro','erro')
+
+        def close(self):
+            self.win.close()
+            LoginWindow.MenuWindow.WindowUsers.__init__()
 
     class Edit:
         def __init__(self):
             self.win = Register()
-            self.win.setupUi()
-            self.win.show()
-            self.win.setWindowTitle(f'update - {LoginWindow.MenuWindow.WindowClients.data[0][3]}')
+            self.win.setWindowTitle(f'update - {LoginWindow.MenuWindow.WindowUsers.data[0][3]}')
             for x in status:
                 self.win.register_cbox1.addItem(x)
-            self.win.register_btn2.pressed.connect(self.win.close)
+            self.win.register_btn2.pressed.connect(self.cancel)
             self.win.register_btn1.pressed.connect(self.update)
             self.win.register_btn1.setFocus()
 
-            self.data = LoginWindow.MenuWindow.WindowClients.data
+            self.data = LoginWindow.MenuWindow.WindowUsers.data
             self.win.register_btn1.setText('Save')
             self.win.register_ti1.setText(self.data[0][0])
             self.win.client_de.setDate(self.data[0][1])
@@ -170,7 +168,11 @@ class Controller(QApplication):
             if username == self.data[0][3] and password == rpassword:
                 mydb.update('users', f"name = '{name}',birthday = '{birthday}',cpf = '{cpf}',password='{password}', status='{statusr}' where username = '{username}'")
                 self.win.close()
-                LoginWindow.MenuWindow.WindowClients.refresh()
+                LoginWindow.MenuWindow.WindowUsers.__init__()
+
+        def cancel(self):
+            self.win.close()
+            LoginWindow.MenuWindow.WindowUsers.__init__()
 
 
 if __name__ == '__main__':

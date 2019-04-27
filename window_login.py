@@ -9,19 +9,20 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 
+
 class Login(QMainWindow):
-    def setupUi(self):
+    def __init__(self):
+        super().__init__()
         self.setObjectName("MainWindow")
-        self.resize(205, 114)
-        self.setMinimumSize(QtCore.QSize(205, 114))
-        self.setMaximumSize(QtCore.QSize(205, 114))
+        self.resize(198, 150)
+        self.setMinimumSize(QtCore.QSize(198, 150))
+        self.setMaximumSize(QtCore.QSize(198, 150))
         self.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.setAutoFillBackground(False)
         self.setDocumentMode(False)
         self.centralwidget = QtWidgets.QWidget(self)
-        self.centralwidget.setMinimumSize(QtCore.QSize(205, 95))
-        self.centralwidget.setMaximumSize(QtCore.QSize(244, 149))
+        self.centralwidget.setAutoFillBackground(False)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -37,13 +38,18 @@ class Login(QMainWindow):
         self.ti_password.setObjectName("ti_password")
         self.verticalLayout.addWidget(self.ti_password)
         self.lbl = QtWidgets.QLabel(self.centralwidget)
+        self.lbl.setMinimumSize(QtCore.QSize(133, 26))
+        self.lbl.setMaximumSize(QtCore.QSize(133, 26))
         self.lbl.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.lbl.setFrameShadow(QtWidgets.QFrame.Plain)
         self.lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl.setObjectName("lbl")
         self.verticalLayout.addWidget(self.lbl)
+        self.rbtn = QtWidgets.QRadioButton(self.centralwidget)
+        self.rbtn.setObjectName("rbtn")
+        self.verticalLayout.addWidget(self.rbtn)
         self.btn = QtWidgets.QPushButton(self.centralwidget)
-        self.btn.setAutoDefault(False)
+        self.btn.setAutoDefault(True)
         self.btn.setDefault(False)
         self.btn.setFlat(False)
         self.btn.setObjectName("btn")
@@ -53,6 +59,7 @@ class Login(QMainWindow):
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+        self.show()
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -60,4 +67,6 @@ class Login(QMainWindow):
         self.ti_username.setPlaceholderText(_translate("MainWindow", "Username"))
         self.ti_password.setPlaceholderText(_translate("MainWindow", "Password"))
         self.lbl.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
+        self.rbtn.setText(_translate("MainWindow", "Remember me"))
         self.btn.setText(_translate("MainWindow", "Login"))
+
