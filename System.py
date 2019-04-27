@@ -169,6 +169,8 @@ class Controller(QApplication):
                 mydb.update('users', f"name = '{name}',birthday = '{birthday}',cpf = '{cpf}',password='{password}', status='{statusr}' where username = '{username}'")
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
+            else:
+                QMessageBox.warning(None,'Warning!','something is wrong')
 
         def cancel(self):
             self.win.close()
