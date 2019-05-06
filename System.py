@@ -91,9 +91,9 @@ class Controller(QApplication):
 
         def edit(self):
             if self.win.user_lw.currentRow() != -1:
-                select_username =str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
+                select_username = str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
                 select_username = select_username.split('-')
-                self.data = mydb.select('name,birthday,cpf,username,password,status',f"users where username = '{select_username[0]}'")
+                self.data = mydb.select('name, birthday, cpf, username, password, status', f"users where username = '{select_username[0]}'")
                 self.win.close()
                 self.WindowEdit = Controller.Edit()
 
@@ -102,7 +102,7 @@ class Controller(QApplication):
             self.choice = self.win.user_cbox.currentText()
             self.users = mydb.select('username,name', f"users where status = '{self.choice}' order by name")
             for x in range(len(self.users)):
-                    self.win.user_lw.addItem(f"{self.users[x][0]} - {self.users[x][1]}")
+                self.win.user_lw.addItem(f"{self.users[x][0]} - {self.users[x][1]}")
 
     class Register:
         def __init__(self):
@@ -125,11 +125,11 @@ class Controller(QApplication):
 
             query = mydb.select('cpf,username', f"users where cpf = '{cpf}' or username = '{username}' ")
             if not query and len(cpf) == 11 and username != '' and password == rpassword:
-                mydb.insert('users','default', username, password, name, birthday, cpf, statusr)
+                mydb.insert('users', 'default', username, password, name, birthday, cpf, statusr)
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
-                QMessageBox.warning(None,'erro','erro')
+                QMessageBox.warning(None, 'erro', 'erro')
 
         def close(self):
             self.win.close()
@@ -170,7 +170,7 @@ class Controller(QApplication):
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
-                QMessageBox.warning(None,'Warning!','something is wrong')
+                QMessageBox.warning(None, 'Warning!', 'something is wrong')
 
         def cancel(self):
             self.win.close()
