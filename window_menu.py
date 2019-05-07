@@ -6,13 +6,13 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 
 
 class Menu(QMainWindow):
 
-    def __init__(self,cstatus):
+    def __init__(self, cstatus):
         super().__init__()
         self.cstatus = cstatus
         self.setObjectName("MainWindow")
@@ -29,26 +29,23 @@ class Menu(QMainWindow):
         self.statusbar = QtWidgets.QStatusBar(self)
         self.statusbar.setObjectName("statusbar")
         self.setStatusBar(self.statusbar)
-        self.actionStock = QtWidgets.QAction(self)
-        self.actionStock.setObjectName("actionStock")
+        self.actionSalary = QtWidgets.QAction(self)
+        self.actionSalary.setObjectName("actionSalary")
         self.actionhistory = QtWidgets.QAction(self)
         self.actionhistory.setObjectName("actionhistory")
         self.actionclients = QtWidgets.QAction(self)
         self.actionclients.setObjectName("actionclients")
         self.actionexit = QtWidgets.QAction(self)
         self.actionexit.setObjectName("actionexit")
-        self.actionbuy = QtWidgets.QAction(self)
-        self.actionbuy.setObjectName("actionbuy")
         self.actionprofile = QtWidgets.QAction(self)
         self.actionprofile.setObjectName("actionprofile")
 
-        #actions
+        # actions
         self.menuMenu.addAction(self.actionprofile)
         if self.cstatus == 'adm' or self.cstatus == 'employee':
-            self.menuMenu.addAction(self.actionStock)
+            self.menuMenu.addAction(self.actionSalary)
             self.menuMenu.addAction(self.actionhistory)
             self.menuMenu.addAction(self.actionclients)
-        self.menuMenu.addAction(self.actionbuy)
         self.menuMenu.addSeparator()
         self.menuMenu.addAction(self.actionexit)
         self.menubar.addAction(self.menuMenu.menuAction())
@@ -62,11 +59,8 @@ class Menu(QMainWindow):
         self.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         if self.cstatus == 'adm' or self.cstatus == 'employee':
-            self.actionStock.setText(_translate("MainWindow", "Stock"))
+            self.actionSalary.setText(_translate("MainWindow", "Salary"))
             self.actionhistory.setText(_translate("MainWindow", "History"))
             self.actionclients.setText(_translate("MainWindow", "Users"))
         self.actionexit.setText(_translate("MainWindow", "Logoff"))
-        self.actionbuy.setText(_translate("MainWindow", "Shop"))
         self.actionprofile.setText(_translate("MainWindow", "Profile"))
-
-

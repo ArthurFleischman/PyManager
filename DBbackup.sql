@@ -3,7 +3,6 @@
 -- Host: 127.0.0.1    Database: register
 -- ------------------------------------------------------
 -- Server version	5.7.24
-use register;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,7 +18,7 @@ use register;
 --
 -- Table structure for table `users`
 --
-
+use register;
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -29,13 +28,13 @@ CREATE TABLE `users` (
   `password` varchar(50) NOT NULL DEFAULT '',
   `name` varchar(100) NOT NULL,
   `birthday` date NOT NULL,
-  `cpf` varchar(11) NOT NULL DEFAULT '00000000000',
-  `status` enum('adm','employee','client','undefined') NOT NULL default 'undefined',
+  `cpf` varchar(15) NOT NULL DEFAULT '00000000000',
+  `status` enum('adm','employee','intern','undefined') NOT NULL DEFAULT 'undefined',
+  `company` varchar(100) NOT NULL DEFAULT 'not set',
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `cpf_2` (`cpf`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `username` (`username`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +43,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES  (3, 'dfa', 'dfa', 'Daidson Fonseca Alves', '1991-06-27', '08928633400', 'adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(1,'TKfleBR','master','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(9,'w','w','w','2000-01-01','12345678765','employee'),(10,'e','e','e','2000-01-01','12345678908','employee'),(11,'r','r','r','2000-01-01','12334567876','client'),(12,'t','t','t','2000-01-01','12334567865','undefined');
+INSERT INTO `users` VALUES (3,'dfa','dfa','Daidson Fonseca Alves','1991-06-27','08928633400','adm','not set'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','undefined','not set'),(1,'acf','acf','Arthur Cabral Fleischman','2000-06-22','13382481464','adm','not set'),(9,'w','w','w','2000-01-01','12345678765','undefined','not set'),(10,'e','e','eduardo','2000-02-01','12345678908','undefined','not set'),(11,'r','r','r','2000-01-01','12334567876','undefined','not set');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,68 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-19 21:30:17
---
--- Table structure for table `salary`
---
-
-DROP TABLE IF EXISTS `wage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wage`
-(
-  `id`        int(11)      NOT NULL AUTO_INCREMENT primary key ,
-  `username`  varchar(10)  NOT NULL,
-  `name`      varchar(100) NOT NULL,
-  `wageDate`  date         NOT NULL,
-  `wageValue` float(10)    NOT NULL
-);
-/*
-
-
-  `status` enum('adm','employee','client','undefined') NOT NULL default 'undefined',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `cpf` (`cpf`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `cpf_2` (`cpf`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-
-*/
-
-
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wage`
---
-
-/*
-LOCK TABLES `wage` WRITE;
-*/
-
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-
-/*
-INSERT INTO `wage` VALUES  (3, 'dfa', 'dfa', 'Daidson Fonseca Alves', '1991-06-27', '08928633400', 'adm'),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','adm'),(6,'q','q','q','2000-01-01','12345678909','client'),(1,'TKfleBR','master','Arthur Cabral Fleischman','2000-06-22','13382481464','adm'),(9,'w','w','w','2000-01-01','12345678765','employee'),(10,'e','e','e','2000-01-01','12345678908','employee'),(11,'r','r','r','2000-01-01','12334567876','client'),(12,'t','t','t','2000-01-01','12334567865','undefined');
-*/
-
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
-/*
-UNLOCK TABLES;
-*/
-
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2019-04-19 21:30:17
-
-
-
-/* 
+-- Dump completed on 2019-05-07 19:59:27

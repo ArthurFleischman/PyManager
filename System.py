@@ -6,7 +6,7 @@ from window_menu import Menu
 from window_register import Register
 import sys
 import Mydb
-status = ('adm', 'employee', 'client', 'undefined')
+status = ('adm', 'employee', 'intern', 'undefined')
 
 
 class Controller(QApplication):
@@ -24,7 +24,8 @@ class Controller(QApplication):
             passw = self.win.ti_password.text()
             passw = passw.split("'")
             passw = ''.join(passw)
-            self.luser = mydb.select('username,status', f"users where username = '{user}' and password = '{passw}'")
+            self.luser = mydb.select(
+                'username,status', f"users where username = '{user}' and password = '{passw}'")
             if not self.luser:
                 self.wmessage()
             else:
@@ -33,10 +34,12 @@ class Controller(QApplication):
                 else:
                     self.checked = False
                 self.win.close()
-                self.MenuWindow = Controller.Menu(self.luser[0][0], self.luser[0][1])
+                self.MenuWindow = Controller.Menu(
+                    self.luser[0][0], self.luser[0][1])
 
         def wmessage(self):
-            self.win.lbl.setText("<font color='red'>wrong user or password</font>")
+            self.win.lbl.setText(
+                "<font color='red'>wrong user or password</font>")
 
     class Menu:
         def __init__(self, title, statusm):
@@ -72,7 +75,8 @@ class Controller(QApplication):
             self.win.user_btn2.pressed.connect(self.remove)
             self.win.user_btn3.pressed.connect(self.win.close)
             self.win.user_btn4.pressed.connect(self.edit)
-            self.choice = self.win.user_cbox.currentTextChanged.connect(self.refresh)
+            self.choice = self.win.user_cbox.currentTextChanged.connect(
+                self.refresh)
 
         def add(self):
             self.win.close()
@@ -91,18 +95,22 @@ class Controller(QApplication):
 
         def edit(self):
             if self.win.user_lw.currentRow() != -1:
-                select_username = str((self.win.user_lw.item(self.win.user_lw.currentRow()).text()))
+                select_username = str((self.win.user_lw.item(
+                    self.win.user_lw.currentRow()).text()))
                 select_username = select_username.split('-')
-                self.data = mydb.select('name, birthday, cpf, username, password, status', f"users where username = '{select_username[0]}'")
+                self.data = mydb.select('name, birthday, cpf, username, password, status',
+                                        f"users where username = '{select_username[0]}'")
                 self.win.close()
                 self.WindowEdit = Controller.Edit()
 
         def refresh(self):
             self.win.user_lw.clear()
             self.choice = self.win.user_cbox.currentText()
-            self.users = mydb.select('username,name', f"users where status = '{self.choice}' order by name")
+            self.users = mydb.select(
+                'username,name', f"users where status = '{self.choice}' order by name")
             for x in range(len(self.users)):
-                self.win.user_lw.addItem(f"{self.users[x][0]} - {self.users[x][1]}")
+                self.win.user_lw.addItem(
+                    f"{self.users[x][0]} - {self.users[x][1]}")
 
     class Register:
         def __init__(self):
@@ -123,9 +131,11 @@ class Controller(QApplication):
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
 
-            query = mydb.select('cpf,username', f"users where cpf = '{cpf}' or username = '{username}' ")
+            query = mydb.select(
+                'cpf,username', f"users where cpf = '{cpf}' or username = '{username}' ")
             if not query and len(cpf) == 11 and username != '' and password == rpassword:
-                mydb.insert('users', 'default', username, password, name, birthday, cpf, statusr)
+                mydb.insert('users', 'default', username,
+                            password, name, birthday, cpf, statusr)
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
@@ -138,7 +148,8 @@ class Controller(QApplication):
     class Edit:
         def __init__(self):
             self.win = Register()
-            self.win.setWindowTitle(f'update - {LoginWindow.MenuWindow.WindowUsers.data[0][3]}')
+            self.win.setWindowTitle(
+                f'update - {LoginWindow.MenuWindow.WindowUsers.data[0][3]}')
             for x in status:
                 self.win.register_cbox1.addItem(x)
             self.win.register_btn2.pressed.connect(self.cancel)
@@ -166,7 +177,8 @@ class Controller(QApplication):
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
             if username == self.data[0][3] and password == rpassword:
-                mydb.update('users', f"name = '{name}',birthday = '{birthday}',cpf = '{cpf}',password='{password}', status='{statusr}' where username = '{username}'")
+                mydb.update(
+                    'users', f"name = '{name}',birthday = '{birthday}',cpf = '{cpf}',password='{password}', status='{statusr}' where username = '{username}'")
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
