@@ -85,13 +85,17 @@ class Register(QMainWindow):
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", "Register"))
-        self.register_ti1.setPlaceholderText(_translate("MainWindow", "Full Name"))
+        self.register_ti1.setPlaceholderText(
+            _translate("MainWindow", "Full Name"))
         self.label_2.setText(_translate("MainWindow", "Birthday:"))
-        self.register_ti3.setPlaceholderText(_translate("MainWindow", "CPF"))
-        self.register_ti4.setPlaceholderText(_translate("MainWindow", "Username"))
-        self.register_ti5.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.register_ti6.setPlaceholderText(_translate("MainWindow", "Repeat Password"))
+        self.register_ti3.setPlaceholderText(
+            _translate("MainWindow", "CPF/CNPJ"))
+        self.register_ti4.setPlaceholderText(
+            _translate("MainWindow", "Username"))
+        self.register_ti5.setPlaceholderText(
+            _translate("MainWindow", "Password"))
+        self.register_ti6.setPlaceholderText(
+            _translate("MainWindow", "Repeat Password"))
         self.label.setText(_translate("MainWindow", "status:"))
         self.register_btn1.setText(_translate("MainWindow", "Register"))
         self.register_btn2.setText(_translate("MainWindow", "Cancel"))
-

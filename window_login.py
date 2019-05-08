@@ -64,9 +64,11 @@ class Login(QMainWindow):
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", "Login"))
-        self.ti_username.setPlaceholderText(_translate("MainWindow", "Username"))
-        self.ti_password.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.lbl.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
+        self.ti_username.setPlaceholderText(
+            _translate("MainWindow", "Username"))
+        self.ti_password.setPlaceholderText(
+            _translate("MainWindow", "Password"))
+        self.lbl.setText(_translate(
+            "MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.rbtn.setText(_translate("MainWindow", "Remember me"))
         self.btn.setText(_translate("MainWindow", "Login"))
-
