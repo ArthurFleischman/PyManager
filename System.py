@@ -8,6 +8,8 @@ import sys
 import Mydb
 status = ('adm', 'employee', 'intern', 'undefined')
 
+# teste
+
 
 class Controller(QApplication):
 
