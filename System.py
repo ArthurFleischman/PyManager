@@ -98,7 +98,7 @@ class Controller(QApplication):
                 select_username = str((self.win.user_lw.item(
                     self.win.user_lw.currentRow()).text()))
                 select_username = select_username.split('-')
-                self.data = mydb.select('name, birthday, cpf, username, password, status',
+                self.data = mydb.select('name, birthday, cpf_cnpj, username, password, status',
                                         f"users where username = '{select_username[0]}'")
                 self.win.close()
                 self.WindowEdit = Controller.Edit()
@@ -125,17 +125,17 @@ class Controller(QApplication):
             name = self.win.register_ti1.text()
             birthday = self.win.client_de.date().toString(Qt.ISODate).split('-')
             birthday = ''.join(birthday)
-            cpf = self.win.register_ti3.text()
+            cpf_cnpj = self.win.register_ti3.text()
             username = self.win.register_ti4.text()
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
 
             query = mydb.select(
-                'cpf,username', f"users where cpf = '{cpf}' or username = '{username}' ")
-            if not query and len(cpf) == 11 and username != '' and password == rpassword:
+                'cpf_cnpj,username', f"users where cpf_cnpj = '{cpf_cnpj}' or username = '{username}' ")
+            if not query and len(cpf_cnpj) == 11 and username != '' and password == rpassword:
                 mydb.insert('users', 'default', username,
-                            password, name, birthday, cpf, statusr)
+                            password, name, birthday, cpf_cnpj, statusr)
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
@@ -171,14 +171,14 @@ class Controller(QApplication):
             name = self.win.register_ti1.text()
             birthday = self.win.client_de.date().toString(Qt.ISODate).split('-')
             birthday = ''.join(birthday)
-            cpf = self.win.register_ti3.text()
+            cpf_cnpj = self.win.register_ti3.text()
             username = self.win.register_ti4.text()
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
             if username == self.data[0][3] and password == rpassword:
                 mydb.update(
-                    'users', f"name = '{name}',birthday = '{birthday}',cpf = '{cpf}',password='{password}', status='{statusr}' where username = '{username}'")
+                    'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}',password='{password}', status='{statusr}' where username = '{username}'")
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
