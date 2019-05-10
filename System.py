@@ -218,6 +218,8 @@ class Controller(QApplication):
 if __name__ == '__main__':
     app = Controller(sys.argv)
     mydb = Mydb.Mysql('localhost', 'TKfleBR', 'arthuracf')
+    write('conection to server succeed')
     mydb.use('register')
     LoginWindow = Controller.Login()
+    write('app initialized')
     sys.exit(app.exec_())
