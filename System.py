@@ -4,6 +4,7 @@ from window_users import User
 from window_login import Login
 from window_menu import Menu
 from window_register import Register
+from window_history import History
 import datetime as dt
 import sys
 import Mydb
@@ -14,15 +15,16 @@ def write(message=''):
     log = open('log_PyManager.txt', 'a')
     log.write(
         f'{dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} -> {message}\n')
-    print(message)
+
     log.close()
 
 
-def read(file=''):
+def read():
     log = open('log_PyManager.txt', 'r')
-    log.read(file)
     log.seek(0)
+    text = log.read()
     log.close()
+    return text
 
 
 class Controller(QApplication):
@@ -66,6 +68,7 @@ class Controller(QApplication):
             # widgets functions
             self.win.actionexit.triggered.connect(self.logoff)
             self.win.actionclients.triggered.connect(self.clients)
+            self.win.actionhistory.triggered.connect(self.history)
             self.win.showMaximized()
             self.win.setWindowTitle(f'{self.title}-{statusm}')
 
@@ -73,12 +76,15 @@ class Controller(QApplication):
             self.WindowUsers = Controller.Users()
 
         def logoff(self):
-            write(f'[{self.title}] log off')
+            write(f'[{self.title}] loged off\n')
             app.closeAllWindows()
             LoginWindow.win.ti_password.setText('')
             if not LoginWindow.checked:
                 LoginWindow.win.ti_username.setText('')
             LoginWindow.win.show()
+
+        def history(self):
+            self.windowhistory = Controller.History()
 
     class Users:
         def __init__(self):
@@ -213,6 +219,12 @@ class Controller(QApplication):
         def cancel(self):
             self.win.close()
             LoginWindow.MenuWindow.WindowUsers.__init__()
+
+    class History:
+        def __init__(self):
+            self.win = History()
+            self.text = read()
+            self.win.textEdit.insertPlainText(self.text)
 
 
 if __name__ == '__main__':
