@@ -1,0 +1,23 @@
+2019-05-10 01:38:17 ->  access denied
+2019-05-10 01:38:37 -> "" access denied
+2019-05-10 01:38:48 -> "de" access denied
+2019-05-10 01:39:04 -> acf access allowed
+2019-05-10 01:39:33 -> acf entered in users window
+2019-05-10 01:39:47 -> acf edited dfa set: birthday = 19910627
+,cpf_cnpj = 08928633400
+,password = dfa
+, status = adm
+
+2019-05-10 01:40:28 -> acf log off
+2019-05-10 01:40:44 -> acf access allowed
+2019-05-10 01:40:48 -> acf entered in users window
+2019-05-10 01:41:08 -> "acf" access allowed
+2019-05-10 01:41:12 -> acf entered in users window
+2019-05-10 01:42:07 -> "acf" access allowed
+2019-05-10 01:42:11 -> acf entered in users window
+2019-05-10 01:43:16 -> "acf" access allowed
+2019-05-10 01:43:21 -> acf entered in users window
+2019-05-10 01:43:27 -> acf deleted user 10
+2019-05-10 01:44:19 -> "acf" access allowed
+2019-05-10 01:44:25 -> acf entered in users window
+2019-05-10 01:44:32 -> acf deleted user w

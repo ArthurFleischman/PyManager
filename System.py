@@ -1,12 +1,28 @@
-from PyQt5.QtWidgets import QApplication, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMessageBox, QTableWidget, QTableWidgetItem
 from PyQt5.QtCore import Qt
 from window_users import User
 from window_login import Login
 from window_menu import Menu
 from window_register import Register
+import datetime as dt
 import sys
 import Mydb
 status = ('adm', 'employee', 'intern', 'undefined')
+
+
+def write(message=''):
+    log = open('log_PyManager.txt', 'a')
+    log.write(
+        f'{dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} -> {message}\n')
+    print(message)
+    log.close()
+
+
+def read(file=''):
+    log = open('log_PyManager.txt', 'r')
+    log.read(file)
+    log.seek(0)
+    log.close()
 
 
 class Controller(QApplication):
@@ -27,6 +43,7 @@ class Controller(QApplication):
             self.luser = mydb.select(
                 'username,status', f"users where username = '{user}' and password = '{passw}'")
             if not self.luser:
+                write(f'"{user}" access denied')
                 self.wmessage()
             else:
                 if self.win.rbtn.isChecked():
@@ -34,6 +51,7 @@ class Controller(QApplication):
                 else:
                     self.checked = False
                 self.win.close()
+                write(f'"{user}" access allowed')
                 self.MenuWindow = Controller.Menu(
                     self.luser[0][0], self.luser[0][1])
 
@@ -43,17 +61,19 @@ class Controller(QApplication):
 
     class Menu:
         def __init__(self, title, statusm):
+            self.title = title
             self.win = Menu(statusm)
             # widgets functions
             self.win.actionexit.triggered.connect(self.logoff)
             self.win.actionclients.triggered.connect(self.clients)
             self.win.showMaximized()
-            self.win.setWindowTitle(f'{title}-{statusm}')
+            self.win.setWindowTitle(f'{self.title}-{statusm}')
 
         def clients(self):
             self.WindowUsers = Controller.Users()
 
         def logoff(self):
+            write(f'[{self.title}] log off')
             app.closeAllWindows()
             LoginWindow.win.ti_password.setText('')
             if not LoginWindow.checked:
@@ -87,8 +107,10 @@ class Controller(QApplication):
                 row = self.win.user_lw.currentRow()
                 item = (str(self.win.user_lw.item(row).text()))
                 item = item.split(' - ')
-                uid = mydb.select('id', f"users where name = '{item[0]}'")
+                uid = mydb.select('id', f"users where username = '{item[0]}'")
                 mydb.delete('users', f"{uid[0][0]}")
+                write(
+                    f'[{LoginWindow.MenuWindow.title}] deleted user "{item[0]}""')
                 self.refresh()
             else:
                 QMessageBox.warning(None, 'ERROR', 'no clients to delete')
@@ -136,6 +158,8 @@ class Controller(QApplication):
             if not query and len(cpf_cnpj) == 11 and username != '' and password == rpassword:
                 mydb.insert('users', 'default', username,
                             password, name, birthday, cpf_cnpj, statusr)
+                write(
+                    f'[{LoginWindow.MenuWindow.title}] registered "{username}" set:\n birthday = {birthday}\n,cpf_cnpj = {cpf_cnpj}\n,password = {password}\n, status = {statusr}\n')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
@@ -179,6 +203,8 @@ class Controller(QApplication):
             if username == self.data[0][3] and password == rpassword:
                 mydb.update(
                     'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}',password='{password}', status='{statusr}' where username = '{username}'")
+                write(
+                    f'[{LoginWindow.MenuWindow.title}] edited "{username}" set:\n birthday = {birthday}\n,cpf_cnpj = {cpf_cnpj}\n,password = {password}\n, status = {statusr}\n')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
