@@ -228,8 +228,11 @@ class Controller(QApplication):
             mylog.log.seek(0)
             self.text = mylog.read()
             self.win.plainTextEdit.clear()
+            self.win.hdataedit.setDate(dt.date.today())
             self.win.plainTextEdit.insertPlainText(self.text)
             self.win.hbtn.pressed.connect(self.filter)
+            self.win.hbtn1.pressed.connect(
+                lambda: self.refresh(self.text, 'r'))
 
         def filter(self):
             date = self.win.hdataedit.date().toString(Qt.ISODate)
@@ -248,14 +251,17 @@ class Controller(QApplication):
                     get = False
             self.refresh(d)
 
-        def refresh(self, data=[]):
+        def refresh(self, data=[], mode='n'):
             self.win.plainTextEdit.clear()
-            if data == []:
-                self.win.plainTextEdit.insertPlainText('No Data Available')
-            for r in range(len(data)):
-                if data[r] != '':
-                    self.win.plainTextEdit.insertPlainText(
-                        '{}\n'.format(data[r]))
+            if mode == 'n':
+                if data == []:
+                    self.win.plainTextEdit.insertPlainText('No Data Available')
+                for r in range(len(data)):
+                    if data[r] != '':
+                        self.win.plainTextEdit.insertPlainText(
+                            '{}\n'.format(data[r]))
+            elif mode == 'r':
+                self.win.plainTextEdit.insertPlainText(self.text)
 
 
 if __name__ == '__main__':
