@@ -35,9 +35,10 @@ class Mysql:
             val = self.cursor.fetchall()
             return val
 
-    def insert(self, table, uid, username, password, name, birthday, cpf, status1):
+    def insert(self, table, uid, username, password, name, birthday, cpf, status1, company):
         try:
-            self.cursor.execute(f"insert into {table} values({uid}, '{username}', '{password}', '{name}', '{birthday}', '{cpf}','{status1}')")
+            self.cursor.execute(
+                f"insert into {table} values({uid}, '{username}', '{password}', '{name}', '{birthday}', '{cpf}','{status1}','{company}')")
         except:
             QMessageBox.warning(None, 'warning', 'wrong values')
         else:
@@ -58,7 +59,8 @@ class Mysql:
         except:
             QMessageBox.warning(None, 'ERROR', 'could not update')
         else:
-            QMessageBox.information(None,'DONE!','users updated')
+            QMessageBox.information(None, 'DONE!', 'users updated')
+
     def alter(self, table, data):
         try:
             self.cursor.execute(f'alter table {table} {data}')

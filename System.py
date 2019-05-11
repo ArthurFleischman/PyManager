@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMessageBox, QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtCore import Qt
 from window_users import User
 from window_login import Login
@@ -11,20 +11,20 @@ import Mydb
 status = ('adm', 'employee', 'intern', 'undefined')
 
 
-def write(message=''):
-    log = open('log_PyManager.txt', 'a')
-    log.write(
-        f'{dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} -> {message}\n')
+class Log:
+    def __init__(self):
+        self.log = open('log_PyManager.txt', 'a+')
 
-    log.close()
+    def write(self, message=''):
+        self.log.write(
+            f'{dt.datetime.now().strftime("[%Y-%m-%d|%H:%M:%S]")}> {message}.\n')
 
+    def reset(self):
+        self.log.seek(0)
 
-def read():
-    log = open('log_PyManager.txt', 'r')
-    log.seek(0)
-    text = log.read()
-    log.close()
-    return text
+    def read(self):
+        self.text = self.log.read()
+        return self.text
 
 
 class Controller(QApplication):
@@ -45,7 +45,7 @@ class Controller(QApplication):
             self.luser = mydb.select(
                 'username,status', f"users where username = '{user}' and password = '{passw}'")
             if not self.luser:
-                write(f'"{user}" access denied')
+                mylog.write(f'"{user}" access denied')
                 self.wmessage()
             else:
                 if self.win.rbtn.isChecked():
@@ -53,7 +53,7 @@ class Controller(QApplication):
                 else:
                     self.checked = False
                 self.win.close()
-                write(f'"{user}" access allowed')
+                mylog.write(f'"{user}" access allowed')
                 self.MenuWindow = Controller.Menu(
                     self.luser[0][0], self.luser[0][1])
 
@@ -76,7 +76,7 @@ class Controller(QApplication):
             self.WindowUsers = Controller.Users()
 
         def logoff(self):
-            write(f'[{self.title}] loged off\n')
+            mylog.write(f'[{self.title}] loged off\n')
             app.closeAllWindows()
             LoginWindow.win.ti_password.setText('')
             if not LoginWindow.checked:
@@ -115,7 +115,7 @@ class Controller(QApplication):
                 item = item.split(' - ')
                 uid = mydb.select('id', f"users where username = '{item[0]}'")
                 mydb.delete('users', f"{uid[0][0]}")
-                write(
+                mylog.write(
                     f'[{LoginWindow.MenuWindow.title}] deleted user "{item[0]}""')
                 self.refresh()
             else:
@@ -158,14 +158,15 @@ class Controller(QApplication):
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
+            company = self.win.register_ti7.text()
 
             query = mydb.select(
                 'cpf_cnpj,username', f"users where cpf_cnpj = '{cpf_cnpj}' or username = '{username}' ")
             if not query and len(cpf_cnpj) == 11 and username != '' and password == rpassword:
                 mydb.insert('users', 'default', username,
-                            password, name, birthday, cpf_cnpj, statusr)
-                write(
-                    f'[{LoginWindow.MenuWindow.title}] registered "{username}" set:\n birthday = {birthday}\n,cpf_cnpj = {cpf_cnpj}\n,password = {password}\n, status = {statusr}\n')
+                            password, name, birthday, cpf_cnpj, statusr, company)
+                mylog.write(
+                    f'[{LoginWindow.MenuWindow.title}] registered "{username}" set:\n birthday = {birthday}\n,cpf_cnpj = {cpf_cnpj}\n,password = {password}\n, status = {statusr}\n, company = {company}\n')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
@@ -206,11 +207,12 @@ class Controller(QApplication):
             password = self.win.register_ti5.text()
             rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
+            company = self.win.register_ti7.text()
             if username == self.data[0][3] and password == rpassword:
                 mydb.update(
-                    'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}',password='{password}', status='{statusr}' where username = '{username}'")
-                write(
-                    f'[{LoginWindow.MenuWindow.title}] edited "{username}" set:\n birthday = {birthday}\n,cpf_cnpj = {cpf_cnpj}\n,password = {password}\n, status = {statusr}\n')
+                    'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}',password='{password}', status='{statusr}', company='{company}' where username = '{username}'")
+                mylog.write(
+                    f'[{LoginWindow.MenuWindow.title}] edited "{username}" set:\n-birthday = {birthday}\n-cpf_cnpj = {cpf_cnpj}\n-password = {password}\n-status = {statusr}\n')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
@@ -223,15 +225,45 @@ class Controller(QApplication):
     class History:
         def __init__(self):
             self.win = History()
-            self.text = read()
-            self.win.textEdit.insertPlainText(self.text)
+            mylog.log.seek(0)
+            self.text = mylog.read()
+            self.win.plainTextEdit.clear()
+            self.win.plainTextEdit.insertPlainText(self.text)
+            self.win.hbtn.pressed.connect(self.filter)
+
+        def filter(self):
+            date = self.win.hdataedit.date().toString(Qt.ISODate)
+            d = []
+            end = -1
+            init = -1
+            get = False
+            for x in range(len(self.text)):
+                if self.text[x] == '[':
+                    init = x
+                if self.text[x] == '.':
+                    end = x
+                    get = True
+                if get == True and self.text[init+1:init+11] == date:
+                    d.append(self.text[init:end+1])
+                    get = False
+            self.refresh(d)
+
+        def refresh(self, data=[]):
+            self.win.plainTextEdit.clear()
+            if data == []:
+                self.win.plainTextEdit.insertPlainText('No Data Available')
+            for r in range(len(data)):
+                if data[r] != '':
+                    self.win.plainTextEdit.insertPlainText(
+                        '{}\n'.format(data[r]))
 
 
 if __name__ == '__main__':
+    mylog = Log()
     app = Controller(sys.argv)
     mydb = Mydb.Mysql('localhost', 'TKfleBR', 'arthuracf')
-    write('conection to server succeed')
+    mylog.write('conection to server succeed')
     mydb.use('register')
     LoginWindow = Controller.Login()
-    write('app initialized')
+    mylog.write('app initialized')
     sys.exit(app.exec_())

@@ -13,17 +13,42 @@ from PyQt5.QtWidgets import QMainWindow
 class History(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setObjectName("self")
-        self.resize(753, 473)
-        self.setMinimumSize(QtCore.QSize(753, 473))
+        self.setObjectName("MainWindow")
+        self.resize(758, 473)
         self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("centralwidget")
-        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(10, 10, 731, 451))
-        self.textEdit.setObjectName("textEdit")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 741, 451))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.hverticalleyout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.hverticalleyout.setContentsMargins(0, 0, 0, 0)
+        self.hverticalleyout.setObjectName("hverticalleyout")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.hlabel = QtWidgets.QLabel(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.hlabel.setFont(font)
+        self.hlabel.setStyleSheet("")
+        self.hlabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.hlabel.setObjectName("hlabel")
+        self.horizontalLayout.addWidget(self.hlabel)
+        self.hdataedit = QtWidgets.QDateEdit(self.verticalLayoutWidget)
+        self.hdataedit.setObjectName("hdataedit")
+        self.horizontalLayout.addWidget(self.hdataedit)
+        self.hbtn = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.hbtn.setObjectName("hbtn")
+        self.horizontalLayout.addWidget(self.hbtn)
+        self.hbtn1 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.hbtn1.setObjectName("hbtn1")
+        self.horizontalLayout.addWidget(self.hbtn1)
+        self.hverticalleyout.addLayout(self.horizontalLayout)
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(
+            self.verticalLayoutWidget)
+        self.plainTextEdit.setReadOnly(True)
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.hverticalleyout.addWidget(self.plainTextEdit)
         self.setCentralWidget(self.centralwidget)
-        self.actioncommentaries = QtWidgets.QAction(self)
-        self.actioncommentaries.setObjectName("actioncommentaries")
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -31,12 +56,7 @@ class History(QMainWindow):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("History", "History"))
-        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                         "p, li { white-space: pre-wrap; }\n"
-                                         "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-                                         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-                                         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.actioncommentaries.setText(
-            _translate("MainWindow", "commentaries"))
+        self.setWindowTitle(_translate("MainWindow", "History"))
+        self.hlabel.setText(_translate("MainWindow", "Filter"))
+        self.hbtn.setText(_translate("MainWindow", "Filter"))
+        self.hbtn1.setText(_translate("MainWindow", "No Filter"))

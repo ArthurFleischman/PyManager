@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'window_register.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -16,7 +16,6 @@ class Register(QMainWindow):
         self.setObjectName("MainWindow")
         self.resize(513, 306)
         self.setMinimumSize(QtCore.QSize(513, 306))
-        self.setMaximumSize(QtCore.QSize(513, 306))
         self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -39,7 +38,7 @@ class Register(QMainWindow):
         self.horizontalLayout_2.addWidget(self.client_de)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.register_ti3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.register_ti3.setText("")
+        self.register_ti3.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.register_ti3.setAlignment(QtCore.Qt.AlignCenter)
         self.register_ti3.setObjectName("register_ti3")
         self.verticalLayout.addWidget(self.register_ti3)
@@ -56,6 +55,11 @@ class Register(QMainWindow):
         self.register_ti6.setAlignment(QtCore.Qt.AlignCenter)
         self.register_ti6.setObjectName("register_ti6")
         self.verticalLayout.addWidget(self.register_ti6)
+        self.register_ti7 = QtWidgets.QLineEdit(self.centralwidget)
+        self.register_ti7.setMaximumSize(QtCore.QSize(493, 20))
+        self.register_ti7.setAlignment(QtCore.Qt.AlignCenter)
+        self.register_ti7.setObjectName("register_ti7")
+        self.verticalLayout.addWidget(self.register_ti7)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -88,14 +92,15 @@ class Register(QMainWindow):
         self.register_ti1.setPlaceholderText(
             _translate("MainWindow", "Full Name"))
         self.label_2.setText(_translate("MainWindow", "Birthday:"))
-        self.register_ti3.setPlaceholderText(
-            _translate("MainWindow", "CPF/CNPJ"))
+        self.register_ti3.setPlaceholderText(_translate("MainWindow", "CPF"))
         self.register_ti4.setPlaceholderText(
             _translate("MainWindow", "Username"))
         self.register_ti5.setPlaceholderText(
             _translate("MainWindow", "Password"))
         self.register_ti6.setPlaceholderText(
             _translate("MainWindow", "Repeat Password"))
+        self.register_ti7.setPlaceholderText(
+            _translate("MainWindow", "Company"))
         self.label.setText(_translate("MainWindow", "status:"))
         self.register_btn1.setText(_translate("MainWindow", "Register"))
         self.register_btn2.setText(_translate("MainWindow", "Cancel"))
