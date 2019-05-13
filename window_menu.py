@@ -43,9 +43,10 @@ class Menu(QMainWindow):
         # actions
         self.menuMenu.addAction(self.actionprofile)
         if self.cstatus == 'adm' or self.cstatus == 'employee':
-            self.menuMenu.addAction(self.actionSalary)
             self.menuMenu.addAction(self.actionhistory)
             self.menuMenu.addAction(self.actionclients)
+            if self.cstatus == 'adm':
+                self.menuMenu.addAction(self.actionSalary)
         self.menuMenu.addSeparator()
         self.menuMenu.addAction(self.actionexit)
         self.menubar.addAction(self.menuMenu.menuAction())

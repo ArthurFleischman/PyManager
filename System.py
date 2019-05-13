@@ -126,7 +126,7 @@ class Controller(QApplication):
                 select_username = str((self.win.user_lw.item(
                     self.win.user_lw.currentRow()).text()))
                 select_username = select_username.split('-')
-                self.data = mydb.select('name, birthday, cpf_cnpj, username, password, status',
+                self.data = mydb.select('name, birthday, cpf_cnpj, username, password, status, company',
                                         f"users where username = '{select_username[0]}'")
                 self.win.close()
                 self.WindowEdit = Controller.Edit()
@@ -196,6 +196,7 @@ class Controller(QApplication):
             self.win.register_ti5.setText(self.data[0][4])
             self.win.register_ti4.setReadOnly(True)
             self.win.register_ti6.setText(self.data[0][4])
+            self.win.register_ti7.setText(self.data[0][6])
             self.win.register_cbox1.setCurrentText(self.data[0][5])
 
         def update(self):

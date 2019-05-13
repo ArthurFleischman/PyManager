@@ -1,0 +1,25 @@
+[2019-05-13|12:59:08]> conection to server succeed.
+[2019-05-13|12:59:08]> app initialized.
+[2019-05-13|12:59:11]> (acf) access allowed.
+[2019-05-13|13:00:38]> (acf) registered (jaall) set: birthday = 20001029, cpf_cnpj = 69969696960, password = 123, status = employee, company = UPE
+.
+[2019-05-13|13:03:07]> conection to server succeed.
+[2019-05-13|13:03:07]> app initialized.
+[2019-05-13|13:03:11]> (acf) access allowed.
+[2019-05-13|13:04:04]> (acf) loged off
+.
+[2019-05-13|13:04:15]> (jaall) access allowed.
+[2019-05-13|13:06:03]> conection to server succeed.
+[2019-05-13|13:06:03]> app initialized.
+[2019-05-13|13:06:10]> (acf) access allowed.
+[2019-05-13|13:06:17]> (acf) loged off
+.
+[2019-05-13|13:06:23]> (acf) access allowed.
+[2019-05-13|13:06:37]> (acf) loged off
+.
+[2019-05-13|13:06:42]> (jaall) access allowed.
+[2019-05-13|13:06:50]> (jaall) loged off
+.
+[2019-05-13|13:07:03]> conection to server succeed.
+[2019-05-13|13:07:03]> app initialized.
+[2019-05-13|13:07:05]> (acf) access allowed.
