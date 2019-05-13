@@ -45,7 +45,7 @@ class Controller(QApplication):
             self.luser = mydb.select(
                 'username,status', f"users where username = '{user}' and password = '{passw}'")
             if not self.luser:
-                mylog.write(f'"{user}" access denied')
+                mylog.write(f'({user}) access denied')
                 self.wmessage()
             else:
                 if self.win.rbtn.isChecked():
@@ -53,7 +53,7 @@ class Controller(QApplication):
                 else:
                     self.checked = False
                 self.win.close()
-                mylog.write(f'"{user}" access allowed')
+                mylog.write(f'({user}) access allowed')
                 self.MenuWindow = Controller.Menu(
                     self.luser[0][0], self.luser[0][1])
 
@@ -76,7 +76,7 @@ class Controller(QApplication):
             self.WindowUsers = Controller.Users()
 
         def logoff(self):
-            mylog.write(f'[{self.title}] loged off\n')
+            mylog.write(f'({self.title}) loged off\n')
             app.closeAllWindows()
             LoginWindow.win.ti_password.setText('')
             if not LoginWindow.checked:
@@ -116,7 +116,7 @@ class Controller(QApplication):
                 uid = mydb.select('id', f"users where username = '{item[0]}'")
                 mydb.delete('users', f"{uid[0][0]}")
                 mylog.write(
-                    f'[{LoginWindow.MenuWindow.title}] deleted user "{item[0]}""')
+                    f'({LoginWindow.MenuWindow.title}) deleted user "{item[0]}""')
                 self.refresh()
             else:
                 QMessageBox.warning(None, 'ERROR', 'no clients to delete')
@@ -166,7 +166,7 @@ class Controller(QApplication):
                 mydb.insert('users', 'default', username,
                             password, name, birthday, cpf_cnpj, statusr, company)
                 mylog.write(
-                    f'[{LoginWindow.MenuWindow.title}] registered "{username}" set:\n birthday = {birthday}\n,cpf_cnpj = {cpf_cnpj}\n,password = {password}\n, status = {statusr}\n, company = {company}\n')
+                    f'({LoginWindow.MenuWindow.title}) registered ({username}) set: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, password = {password}, status = {statusr}, company = {company}\n')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
@@ -212,7 +212,7 @@ class Controller(QApplication):
                 mydb.update(
                     'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}',password='{password}', status='{statusr}', company='{company}' where username = '{username}'")
                 mylog.write(
-                    f'[{LoginWindow.MenuWindow.title}] edited "{username}" set:\n-birthday = {birthday}\n-cpf_cnpj = {cpf_cnpj}\n-password = {password}\n-status = {statusr}\n')
+                    f'({LoginWindow.MenuWindow.title}) edited ({username}) to: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, password = {password}, status = {statusr}')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
