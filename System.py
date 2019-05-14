@@ -126,7 +126,7 @@ class Controller(QApplication):
                 select_username = str((self.win.user_lw.item(
                     self.win.user_lw.currentRow()).text()))
                 select_username = select_username.split('-')
-                self.data = mydb.select('name, birthday, cpf_cnpj, username, password, status, company',
+                self.data = mydb.select('name, birthday, cpf_cnpj, username, status, company',
                                         f"users where username = '{select_username[0]}'")
                 self.win.close()
                 self.WindowEdit = Controller.Edit()
@@ -178,7 +178,7 @@ class Controller(QApplication):
 
     class Edit:
         def __init__(self):
-            self.win = Register()
+            self.win = Register('e')
             self.win.setWindowTitle(
                 f'update - {LoginWindow.MenuWindow.WindowUsers.data[0][3]}')
             for x in status:
@@ -193,11 +193,9 @@ class Controller(QApplication):
             self.win.client_de.setDate(self.data[0][1])
             self.win.register_ti3.setText(self.data[0][2])
             self.win.register_ti4.setText(self.data[0][3])
-            self.win.register_ti5.setText(self.data[0][4])
             self.win.register_ti4.setReadOnly(True)
-            self.win.register_ti6.setText(self.data[0][4])
-            self.win.register_ti7.setText(self.data[0][6])
-            self.win.register_cbox1.setCurrentText(self.data[0][5])
+            self.win.register_ti7.setText(self.data[0][5])
+            self.win.register_cbox1.setCurrentText(self.data[0][4])
 
         def update(self):
             name = self.win.register_ti1.text()
@@ -205,19 +203,14 @@ class Controller(QApplication):
             birthday = ''.join(birthday)
             cpf_cnpj = self.win.register_ti3.text()
             username = self.win.register_ti4.text()
-            password = self.win.register_ti5.text()
-            rpassword = self.win.register_ti6.text()
             statusr = self.win.register_cbox1.currentText()
             company = self.win.register_ti7.text()
-            if username == self.data[0][3] and password == rpassword:
-                mydb.update(
-                    'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}',password='{password}', status='{statusr}', company='{company}' where username = '{username}'")
-                mylog.write(
-                    f'({LoginWindow.MenuWindow.title}) edited ({username}) to: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, password = {password}, status = {statusr}')
-                self.win.close()
-                LoginWindow.MenuWindow.WindowUsers.__init__()
-            else:
-                QMessageBox.warning(None, 'Warning!', 'something is wrong')
+            mydb.update(
+                'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}', status='{statusr}', company='{company}' where username = '{username}'")
+            mylog.write(
+                f'({LoginWindow.MenuWindow.title}) edited ({username}) to: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, status = {statusr}')
+            self.win.close()
+            LoginWindow.MenuWindow.WindowUsers.__init__()
 
         def cancel(self):
             self.win.close()
