@@ -11,8 +11,9 @@ from PyQt5.QtWidgets import QMainWindow
 
 
 class Register(QMainWindow):
-    def __init__(self):
+    def __init__(self, mode='r'):
         super().__init__()
+        self.mode = mode
         self.setObjectName("MainWindow")
         self.resize(513, 306)
         self.setMinimumSize(QtCore.QSize(513, 306))
@@ -47,14 +48,15 @@ class Register(QMainWindow):
         self.register_ti4.setAlignment(QtCore.Qt.AlignCenter)
         self.register_ti4.setObjectName("register_ti4")
         self.verticalLayout.addWidget(self.register_ti4)
-        self.register_ti5 = QtWidgets.QLineEdit(self.centralwidget)
-        self.register_ti5.setAlignment(QtCore.Qt.AlignCenter)
-        self.register_ti5.setObjectName("register_ti5")
-        self.verticalLayout.addWidget(self.register_ti5)
-        self.register_ti6 = QtWidgets.QLineEdit(self.centralwidget)
-        self.register_ti6.setAlignment(QtCore.Qt.AlignCenter)
-        self.register_ti6.setObjectName("register_ti6")
-        self.verticalLayout.addWidget(self.register_ti6)
+        if self.mode != 'e':
+            self.register_ti5 = QtWidgets.QLineEdit(self.centralwidget)
+            self.register_ti5.setAlignment(QtCore.Qt.AlignCenter)
+            self.register_ti5.setObjectName("register_ti5")
+            self.verticalLayout.addWidget(self.register_ti5)
+            self.register_ti6 = QtWidgets.QLineEdit(self.centralwidget)
+            self.register_ti6.setAlignment(QtCore.Qt.AlignCenter)
+            self.register_ti6.setObjectName("register_ti6")
+            self.verticalLayout.addWidget(self.register_ti6)
         self.register_ti7 = QtWidgets.QLineEdit(self.centralwidget)
         self.register_ti7.setMaximumSize(QtCore.QSize(493, 20))
         self.register_ti7.setAlignment(QtCore.Qt.AlignCenter)
@@ -95,10 +97,11 @@ class Register(QMainWindow):
         self.register_ti3.setPlaceholderText(_translate("MainWindow", "CPF"))
         self.register_ti4.setPlaceholderText(
             _translate("MainWindow", "Username"))
-        self.register_ti5.setPlaceholderText(
-            _translate("MainWindow", "Password"))
-        self.register_ti6.setPlaceholderText(
-            _translate("MainWindow", "Repeat Password"))
+        if self.mode != 'e':
+            self.register_ti5.setPlaceholderText(
+                _translate("MainWindow", "Password"))
+            self.register_ti6.setPlaceholderText(
+                _translate("MainWindow", "Repeat Password"))
         self.register_ti7.setPlaceholderText(
             _translate("MainWindow", "Company"))
         self.label.setText(_translate("MainWindow", "status:"))
