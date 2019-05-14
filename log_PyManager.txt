@@ -42,3 +42,10 @@
 .
 [2019-05-13|13:45:33]> conection to server succeed.
 [2019-05-13|13:45:33]> app initialized.
+[2019-05-13|23:50:39]> conection to server successful.
+[2019-05-13|23:50:40]> app initialized.
+[2019-05-13|23:50:44]> (dfa) access denied.
+[2019-05-13|23:50:53]> (acf) access denied.
+[2019-05-13|23:55:41]> conection to server successful.
+[2019-05-13|23:55:42]> app initialized.
+[2019-05-13|23:55:50]> (TKfleBR) access denied.
