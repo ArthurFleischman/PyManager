@@ -46,7 +46,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'dfa','dfa','Daidson Fonseca Alves','1991-06-27','08928633400','adm','',0),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','undefined','not set',0),(1,'acf','acf','Arthur Cabral Fleischman','2000-06-22','13382481464','adm','Apple',0),(14,'a','a','a','2000-01-01','12345678901','intern','a',0),(15,'jaall','123','João Antonio Araújo Lopes Lima','2000-10-29','69969696960','employee','UPE',0),(11,'r','r','r','2000-01-01','12334567876','undefined','not set',0);
+INSERT INTO `users` VALUES (3,'dfa','dfa','Daidson Fonseca Alves','1991-06-27','08928633400','adm','',0,0),(2,'lts','lts','Lucas Tejo Sena','2000-05-29','09983594404','undefined','not set',0,0),(1,'acf','acf','Arthur Cabral Fleischman','2000-06-22','13382481464','adm','Apple',0,0),(14,'a','a','a','2000-01-01','12345678901','intern','a',0,0),(15,'jaall','123','João Antonio Araújo Lopes Lima','2000-10-29','69969696960','employee','UPE',0,0),(11,'r','r','r','2000-01-01','12334567876','undefined','not set',0,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

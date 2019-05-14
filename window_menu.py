@@ -29,8 +29,8 @@ class Menu(QMainWindow):
         self.statusbar = QtWidgets.QStatusBar(self)
         self.statusbar.setObjectName("statusbar")
         self.setStatusBar(self.statusbar)
-        self.actionSalary = QtWidgets.QAction(self)
-        self.actionSalary.setObjectName("actionSalary")
+        self.actionsalary = QtWidgets.QAction(self)
+        self.actionsalary.setObjectName("actionsalary")
         self.actionhistory = QtWidgets.QAction(self)
         self.actionhistory.setObjectName("actionhistory")
         self.actionclients = QtWidgets.QAction(self)
@@ -46,7 +46,7 @@ class Menu(QMainWindow):
             self.menuMenu.addAction(self.actionhistory)
             self.menuMenu.addAction(self.actionclients)
             if self.cstatus == 'adm':
-                self.menuMenu.addAction(self.actionSalary)
+                self.menuMenu.addAction(self.actionsalary)
         self.menuMenu.addSeparator()
         self.menuMenu.addAction(self.actionexit)
         self.menubar.addAction(self.menuMenu.menuAction())
@@ -60,7 +60,7 @@ class Menu(QMainWindow):
         self.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         if self.cstatus == 'adm' or self.cstatus == 'employee':
-            self.actionSalary.setText(_translate("MainWindow", "Salary"))
+            self.actionsalary.setText(_translate("MainWindow", "Salary"))
             self.actionhistory.setText(_translate("MainWindow", "History"))
             self.actionclients.setText(_translate("MainWindow", "Users"))
         self.actionexit.setText(_translate("MainWindow", "Logoff"))

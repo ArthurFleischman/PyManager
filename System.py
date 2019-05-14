@@ -5,6 +5,7 @@ from window_login import Login
 from window_menu import Menu
 from window_register import Register
 from window_history import History
+from window_salary import Salary
 import datetime as dt
 import sys
 import Mydb
@@ -69,6 +70,7 @@ class Controller(QApplication):
             self.win.actionexit.triggered.connect(self.logoff)
             self.win.actionclients.triggered.connect(self.clients)
             self.win.actionhistory.triggered.connect(self.history)
+            self.win.actionsalary.triggered.connect(self.salary)
             self.win.showMaximized()
             self.win.setWindowTitle(f'{self.title}-{statusm}')
 
@@ -85,6 +87,9 @@ class Controller(QApplication):
 
         def history(self):
             self.windowhistory = Controller.History()
+
+        def salary(self):
+            self.windowsalary = Controller.Salary()
 
     class Users:
         def __init__(self):
@@ -256,6 +261,10 @@ class Controller(QApplication):
                             '{}\n'.format(data[r]))
             elif mode == 'r':
                 self.win.plainTextEdit.insertPlainText(self.text)
+
+    class Salary:
+        def __init__(self):
+            self.win = Salary()
 
 
 if __name__ == '__main__':
