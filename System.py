@@ -213,7 +213,7 @@ class Controller(QApplication):
             mydb.update(
                 'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}', status='{statusr}', company='{company}' where username = '{username}'")
             mylog.write(
-                f'({LoginWindow.MenuWindow.title}) edited ({username}) to: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, status = {statusr}')
+                f'({LoginWindow.MenuWindow.title}) edited ({username}) to: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, status = {statusr}, company = {company}')
             self.win.close()
             LoginWindow.MenuWindow.WindowUsers.__init__()
 

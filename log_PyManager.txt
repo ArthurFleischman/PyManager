@@ -63,3 +63,14 @@
 [2019-05-14|14:38:08]> (acf) access allowed.
 [2019-05-14|14:38:56]> conection to server successful.
 [2019-05-14|14:38:56]> app initialized.
+[2019-05-14|14:40:10]> conection to server successful.
+[2019-05-14|14:40:10]> app initialized.
+[2019-05-14|14:40:20]> (acf) access allowed.
+[2019-05-14|15:21:23]> conection to server successful.
+[2019-05-14|15:21:23]> app initialized.
+[2019-05-14|15:21:26]> (acf) access allowed.
+[2019-05-14|15:21:40]> (acf) edited (dfa) to: birthday = 19910627, cpf_cnpj = 08928633400, status = adm.
+[2019-05-14|15:22:49]> conection to server successful.
+[2019-05-14|15:22:51]> app initialized.
+[2019-05-14|15:22:53]> (acf) access allowed.
+[2019-05-14|15:23:07]> (acf) edited (acf) to: birthday = 20000622, cpf_cnpj = 13382481464, status = adm, company = Apple.
