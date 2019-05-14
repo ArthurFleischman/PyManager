@@ -13,7 +13,7 @@ status = ('adm', 'employee', 'intern', 'undefined')
 
 class Log:
     def __init__(self):
-        self.log = open('log_Py_HR_Manager.txt', 'a+')
+        self.log = open('log_PyManager.txt', 'a+')
 
     def write(self, message=''):
         self.log.write(
@@ -262,7 +262,7 @@ if __name__ == '__main__':
     mylog = Log()
     app = Controller(sys.argv)
     mydb = Mydb.Mysql('localhost', 'TKfleBR', 'arthuracf')
-    mylog.write('conection to server succeed')
+    mylog.write('conection to server successful')
     mydb.use('register')
     LoginWindow = Controller.Login()
     mylog.write('app initialized')
