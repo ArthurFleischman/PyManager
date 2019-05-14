@@ -6,6 +6,7 @@ from window_menu import Menu
 from window_register import Register
 from window_history import History
 from window_salary import Salary
+from window_profile import Profile
 import datetime as dt
 import sys
 import Mydb
@@ -71,6 +72,7 @@ class Controller(QApplication):
             self.win.actionclients.triggered.connect(self.clients)
             self.win.actionhistory.triggered.connect(self.history)
             self.win.actionsalary.triggered.connect(self.salary)
+            self.win.actionprofile.triggered.connect(self.profile)
             self.win.showMaximized()
             self.win.setWindowTitle(f'{self.title}-{statusm}')
 
@@ -90,6 +92,10 @@ class Controller(QApplication):
 
         def salary(self):
             self.windowsalary = Controller.Salary()
+
+        def profile(self):
+            self.data1 = mydb.select('name,cpf_cnpj,password,status,birthday,company,liquid_salary',f"users where username = '{LoginWindow.MenuWindow.title}'")
+            self.windowprofile = Controller.Profile()
 
     class Users:
         def __init__(self):
@@ -266,6 +272,41 @@ class Controller(QApplication):
         def __init__(self):
             self.win = Salary()
 
+    class Profile:
+        def __init__(self):
+            self.data = LoginWindow.MenuWindow.data1
+            self.win = Profile()
+            self.win.setWindowTitle(
+                f'Profile - {self.data[0][1]}')
+            self.win.pushButton_2.pressed.connect(self.win.close)
+            self.win.pushButton.pressed.connect(self.update)
+            self.win.lineEdit_2.setReadOnly(True)
+            self.win.lineEdit_8.setReadOnly(True)
+            self.win.lineEdit.setText(self.data[0][0])
+            self.win.lineEdit_7.setText(self.data[0][1])
+            self.win.lineEdit_2.setText(LoginWindow.MenuWindow.title)
+            self.win.lineEdit_3.setText(self.data[0][2])
+            self.win.lineEdit_4.setText(self.data[0][2])
+            self.win.lineEdit_5.setText(self.data[0][3])
+            # name,cpf_cnpj,password,status,birthday,company,liquid_salary
+            self.win.dateEdit.setDate(self.data[0][4])
+            self.win.lineEdit_6.setText(self.data[0][5])
+            self.win.lineEdit_8.setText(str(self.data[0][6]))
+
+        def update(self):
+            name = self.win.lineEdit.text()
+            birthday = self.win.dateEdit.date().toString(Qt.ISODate).split('-')
+            birthday = ''.join(birthday)
+            cpf_cnpj = self.win.lineEdit_7.text()
+            username = self.win.lineEdit_2.text()
+            statusr = self.win.lineEdit_5.Text()
+            company = self.win.lineEdit_6.text()
+            salary = self.win.lineEdit_8.text()
+            mydb.update(
+                'users', f"name = '{name}',birthday = '{birthday}',cpf_cnpj = '{cpf_cnpj}', status='{statusr}', company='{company}, ' where username = '{username}'")
+            mylog.write(
+                f'({LoginWindow.MenuWindow.title}) edited birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, status = {statusr}, company = {company}')
+            self.win.close()
 
 if __name__ == '__main__':
     mylog = Log()

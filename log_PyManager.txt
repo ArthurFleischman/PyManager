@@ -74,3 +74,53 @@
 [2019-05-14|15:22:51]> app initialized.
 [2019-05-14|15:22:53]> (acf) access allowed.
 [2019-05-14|15:23:07]> (acf) edited (acf) to: birthday = 20000622, cpf_cnpj = 13382481464, status = adm, company = Apple.
+[2019-05-14|18:51:05]> conection to server successful.
+[2019-05-14|18:51:06]> app initialized.
+[2019-05-14|18:51:08]> (acf) access allowed.
+[2019-05-14|18:54:17]> conection to server successful.
+[2019-05-14|18:54:17]> app initialized.
+[2019-05-14|18:54:22]> conection to server successful.
+[2019-05-14|18:54:23]> app initialized.
+[2019-05-14|18:59:10]> conection to server successful.
+[2019-05-14|18:59:10]> app initialized.
+[2019-05-14|18:59:12]> (acf) access allowed.
+[2019-05-14|18:59:32]> conection to server successful.
+[2019-05-14|18:59:33]> app initialized.
+[2019-05-14|18:59:35]> (acf) access allowed.
+[2019-05-14|19:01:21]> conection to server successful.
+[2019-05-14|19:01:21]> app initialized.
+[2019-05-14|19:01:24]> (acf) access allowed.
+[2019-05-14|19:03:37]> conection to server successful.
+[2019-05-14|19:03:37]> app initialized.
+[2019-05-14|19:03:42]> conection to server successful.
+[2019-05-14|19:03:42]> app initialized.
+[2019-05-14|19:03:44]> (acf) access allowed.
+[2019-05-14|19:17:58]> conection to server successful.
+[2019-05-14|19:17:58]> app initialized.
+[2019-05-14|19:18:00]> (acf) access allowed.
+[2019-05-14|19:18:40]> (acf) loged off
+.
+[2019-05-14|19:18:47]> (acf) access denied.
+[2019-05-14|19:18:51]> (acf) access allowed.
+[2019-05-14|19:19:15]> conection to server successful.
+[2019-05-14|19:19:15]> app initialized.
+[2019-05-14|19:19:17]> (acf) access allowed.
+[2019-05-14|19:19:29]> (acf) loged off
+.
+[2019-05-14|19:19:35]> (acf) access denied.
+[2019-05-14|19:20:00]> conection to server successful.
+[2019-05-14|19:20:01]> app initialized.
+[2019-05-14|19:20:03]> (acf) access allowed.
+[2019-05-14|19:20:43]> conection to server successful.
+[2019-05-14|19:20:43]> app initialized.
+[2019-05-14|19:20:46]> (acf) access allowed.
+[2019-05-14|19:20:59]> (acf) loged off
+.
+[2019-05-14|19:21:06]> (acf) access denied.
+[2019-05-14|19:24:26]> conection to server successful.
+[2019-05-14|19:24:27]> app initialized.
+[2019-05-14|19:24:30]> (acf) access allowed.
+[2019-05-14|19:27:04]> conection to server successful.
+[2019-05-14|19:27:04]> app initialized.
+[2019-05-14|19:27:06]> (acf) access allowed.
+[2019-05-14|19:27:10]> (acf) edited birthday = 20000622, cpf_cnpj = 13382481464, status = adm, company = Apple.

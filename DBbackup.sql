@@ -39,9 +39,9 @@ CREATE TABLE `users`
 ('adm','employee','intern','undefined') NOT NULL DEFAULT 'undefined',
   `company` varchar
 (100) NOT NULL DEFAULT 'not set',
-  `brute salary` DOUBLE
+  `brute_salary` DOUBLE
 (11,2) NOT NULL DEFAULT '0',
-  `liquid salary` DOUBLE
+  `liquid_salary` DOUBLE
 (11,2) NOT NULL DEFAULT '0',
   PRIMARY KEY
 (`id`),
