@@ -1,0 +1,5 @@
+[2019-05-13|23:00:41]> conection to server succeed.
+[2019-05-13|23:00:42]> app initialized.
+[2019-05-13|23:00:48]> (dfa) access denied.
+[2019-05-13|23:00:50]> (dfa) access denied.
+[2019-05-13|23:00:55]> (afd) access denied.

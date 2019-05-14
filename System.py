@@ -13,7 +13,7 @@ status = ('adm', 'employee', 'intern', 'undefined')
 
 class Log:
     def __init__(self):
-        self.log = open('log_PyManager.txt', 'a+')
+        self.log = open('log_Py_HR_Manager.txt', 'a+')
 
     def write(self, message=''):
         self.log.write(
