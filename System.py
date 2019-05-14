@@ -171,7 +171,7 @@ class Controller(QApplication):
                 mydb.insert('users', 'default', username,
                             password, name, birthday, cpf_cnpj, statusr, company)
                 mylog.write(
-                    f'({LoginWindow.MenuWindow.title}) registered ({username}) set: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, password = {password}, status = {statusr}, company = {company}\n')
+                    f'({LoginWindow.MenuWindow.title}) registered ({username}) set: birthday = {birthday}, cpf_cnpj = {cpf_cnpj}, password = {password}, status = {statusr}, company = {company}')
                 self.win.close()
                 LoginWindow.MenuWindow.WindowUsers.__init__()
             else:
