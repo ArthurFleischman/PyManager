@@ -11,12 +11,14 @@ from PyQt5.QtWidgets import QMainWindow
 
 
 class Salary(QMainWindow):
-    def __init__(self, Form):
+    def __init__(self):
         super().__init__()
-        Form.setObjectName("Form")
-        Form.resize(1116, 868)
-        self.dockWidget = QtWidgets.QDockWidget(Form)
-        self.dockWidget.setGeometry(QtCore.QRect(180, 180, 621, 461))
+        self.setObjectName("MainWindow")
+        self.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(self)
+        self.centralwidget.setObjectName("centralwidget")
+        self.dockWidget = QtWidgets.QDockWidget(self.centralwidget)
+        self.dockWidget.setGeometry(QtCore.QRect(100, 30, 621, 461))
         self.dockWidget.setObjectName("dockWidget")
         self.dockWidgetContents = QtWidgets.QWidget()
         self.dockWidgetContents.setObjectName("dockWidgetContents")
@@ -60,33 +62,45 @@ class Salary(QMainWindow):
         self.verticalScrollBar_3.setObjectName("verticalScrollBar_3")
         self.tabWidget.addTab(self.tab_2, "")
         self.dockWidget.setWidget(self.dockWidgetContents)
+        self.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(self)
+        self.statusbar.setObjectName("statusbar")
+        self.setStatusBar(self.statusbar)
+        self.menubar = QtWidgets.QMenuBar(self)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setObjectName("menubar")
+        self.menuSal_rio = QtWidgets.QMenu(self.menubar)
+        self.menuSal_rio.setObjectName("menuSal_rio")
+        self.setMenuBar(self.menubar)
+        self.menubar.addAction(self.menuSal_rio.menuAction())
 
-        self.retranslateUi(Form)
+        self.retranslateUi()
         self.tabWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        QtCore.QMetaObject.connectSlotsByName(self)
         self.show()
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.textBrowser.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                             "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
                                             "p, li { white-space: pre-wrap; }\n"
                                             "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
                                             "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CPF</p></body></html>"))
-        self.textBrowser_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                               "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
                                               "p, li { white-space: pre-wrap; }\n"
                                               "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
                                               "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Salário</p></body></html>"))
         self.doubleSpinBox.setToolTip(_translate(
-            "Form", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         self.doubleSpinBox.setWhatsThis(_translate(
-            "Form", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
-        self.pushButton.setText(_translate("Form", "Registrar"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+        self.pushButton.setText(_translate("MainWindow", "Registrar"))
         self.lineEdit.setToolTip(_translate(
-            "Form", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(
-            self.tab), _translate("Form", "Salário Bruto"))
+            self.tab), _translate("MainWindow", "Salário Bruto"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(
-            self.tab_2), _translate("Form", "Salário Líquido"))
+            self.tab_2), _translate("MainWindow", "Salário Líquido"))
+        self.menuSal_rio.setTitle(_translate("MainWindow", "Salário"))

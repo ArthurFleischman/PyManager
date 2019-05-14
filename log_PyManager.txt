@@ -49,3 +49,12 @@
 [2019-05-13|23:55:41]> conection to server successful.
 [2019-05-13|23:55:42]> app initialized.
 [2019-05-13|23:55:50]> (TKfleBR) access denied.
+[2019-05-14|13:06:56]> conection to server successful.
+[2019-05-14|13:06:57]> app initialized.
+[2019-05-14|13:06:59]> (acf) access allowed.
+[2019-05-14|13:07:12]> (acf) edited (lts) to: birthday = 20000529, cpf_cnpj = 09983594404, status = employee.
+[2019-05-14|13:07:23]> (acf) edited (a) to: birthday = 20000101, cpf_cnpj = 12345678901, status = intern.
+[2019-05-14|13:19:37]> conection to server successful.
+[2019-05-14|13:19:38]> app initialized.
+[2019-05-14|13:19:40]> (acf) access allowed.
+[2019-05-14|13:21:02]> (acf) edited (lts) to: birthday = 20000529, cpf_cnpj = 09983594404, status = undefined.
