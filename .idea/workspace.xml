@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8419afec-f61f-43bd-ab46-7586c437fc8a" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PyManager$test.coverage" NAME="test Coverage Results" MODIFIED="1556318633124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyManager$System_gui.coverage" NAME="System+gui Coverage Results" MODIFIED="1554512264234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyManager$window.coverage" NAME="System Coverage Results" MODIFIED="1554767366249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyManager$System.coverage" NAME="System Coverage Results" MODIFIED="1557149087733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyManager$System1.coverage" NAME="System Coverage Results" MODIFIED="1555721883451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyManager$System__1_.coverage" NAME="System (1) Coverage Results" MODIFIED="1556153873943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="register: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PyManager" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/System.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="83" column="63" lean-forward="true" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>rmsg</find>
+      <find>select</find>
+      <find>ctext</find>
+      <find>user e</find>
+      <find>mydb.inser</find>
+      <find>class clients</find>
+      <find>luser</find>
+      <find>Msg</find>
+      <find>showmsg</find>
+      <find>msg</find>
+      <find>mydb.</find>
+      <find>cstatus</find>
+      <find>s</find>
+      <find>status</find>
+      <find>LoginWindow.luser</find>
+      <find>clients</find>
+      <find>Users</find>
+      <find>register</find>
+      <find>employees</find>
+      <find>USER</find>
+      <find>windowC</find>
+      <find>keep</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop+gui+db" />
+      </map>
+    </option>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="7d3888ea-eb82-4abb-a876-dd1f28c80cd4" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/System+gui.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/87172e3e-dcad-46dc-807d-8d1a3a2a1808/console.sql" />
+        <option value="$PROJECT_DIR$/information_schema_INNODB_CMPMEM_RESET.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/618881ac-fd86-465f-ab60-b35085657bfc/console.sql" />
+        <option value="$PROJECT_DIR$/adm.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/baa96663-569a-4dad-9b95-b78b87732fb7/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/214a3af1-0544-4824-997a-caf30fda327e/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/31841ce9-f6aa-4ce1-bdec-969ba5a49ea1/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/81756784-1f54-46bb-a3ff-3de4fd28b810/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a9d4ecc3-71c4-45b8-b11d-1855fe8dcb42/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/85550c0e-93aa-48c2-89e5-b11993e111b2/console.sql" />
+        <option value="$PROJECT_DIR$/window.py" />
+        <option value="$PROJECT_DIR$/menu.py" />
+        <option value="$PROJECT_DIR$/System1.py" />
+        <option value="$PROJECT_DIR$/window_employees.py" />
+        <option value="$PROJECT_DIR$/window_clients.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/log_PyManager.txt" />
+        <option value="$PROJECT_DIR$/Mydb.py" />
+        <option value="$PROJECT_DIR$/../Lpaa/aula_2019_04_16.py" />
+        <option value="$PROJECT_DIR$/DBbackup.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/08e7cf9a-5534-440f-8d91-3d750c53cb91/console.sql" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/window_users.py" />
+        <option value="$PROJECT_DIR$/window_menu.py" />
+        <option value="$PROJECT_DIR$/window_register.py" />
+        <option value="$PROJECT_DIR$/window_login.py" />
+        <option value="$PROJECT_DIR$/System.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-3" />
+    <option name="width" value="1378" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.data.extractors.current.id" value="SQL Inserts" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2106825" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arthur\PycharmProjects\PyManager" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arthur\PycharmProjects\PyManager\winodw_ui" />
+      <recent name="C:\Users\Arthur\PycharmProjects\PyManager\.ui_files" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.System">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="System" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="PyManager" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Arthur\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/System.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Arthur\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/System.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="PyManager" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Arthur\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer" factoryName="Flask server">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="Lpaa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.System" />
+      <item itemvalue="Python.test" />
+    </list>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="ACTIVE_ACTIONS" value=",DML statements,Select statements,SHOW_INHERITED,ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8419afec-f61f-43bd-ab46-7586c437fc8a" name="Default Changelist" comment="" />
+      <created>1554495311334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554495311334</updated>
+      <workItem from="1554495313827" duration="23248000" />
+      <workItem from="1554586859637" duration="343000" />
+      <workItem from="1554587821060" duration="27991000" />
+      <workItem from="1554754395450" duration="2757000" />
+      <workItem from="1554772690484" duration="10132000" />
+      <workItem from="1554784616164" duration="10005000" />
+      <workItem from="1554850160173" duration="61414000" />
+      <workItem from="1555018252166" duration="766000" />
+      <workItem from="1555037948398" duration="1933000" />
+      <workItem from="1555185664931" duration="15289000" />
+      <workItem from="1555435576404" duration="5277000" />
+      <workItem from="1555453346383" duration="347000" />
+      <workItem from="1555464106806" duration="720000" />
+      <workItem from="1555522470026" duration="37015000" />
+      <workItem from="1555722024613" duration="3365000" />
+      <workItem from="1555800848312" duration="5867000" />
+      <workItem from="1556034936008" duration="7518000" />
+      <workItem from="1556077505228" duration="6881000" />
+      <workItem from="1556224374803" duration="1320000" />
+      <workItem from="1556225933158" duration="20236000" />
+      <workItem from="1556393637293" duration="392000" />
+      <workItem from="1556568855928" duration="822000" />
+      <workItem from="1556573909528" duration="681000" />
+      <workItem from="1556587464934" duration="2473000" />
+      <workItem from="1556662186619" duration="102000" />
+      <workItem from="1556662554295" duration="499000" />
+      <workItem from="1557149042146" duration="1181000" />
+    </task>
+    <task id="LOCAL-00001" summary="creating project's archive">
+      <created>1554495635190</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554495635190</updated>
+    </task>
+    <task id="LOCAL-00002" summary="testing Pyqt5gui">
+      <created>1554511141071</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554511141071</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create database">
+      <created>1554586279430</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554586279430</updated>
+    </task>
+    <task id="LOCAL-00004" summary="functional database class and return data function">
+      <created>1554665058378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554665058379</updated>
+    </task>
+    <task id="LOCAL-00005" summary="functional script python + mysql">
+      <created>1554755379603</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1554755379603</updated>
+    </task>
+    <task id="LOCAL-00006" summary="functional script python + mysql">
+      <created>1554772990198</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554772990198</updated>
+    </task>
+    <task id="LOCAL-00007" summary="functional script python + mysql + PyQt5">
+      <created>1554779570460</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554779570460</updated>
+    </task>
+    <task id="LOCAL-00008" summary="adding .ui file and deleting useless stuff">
+      <created>1554779696360</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554779696360</updated>
+    </task>
+    <task id="LOCAL-00009" summary="adding database backup while we dont have an remote host">
+      <created>1554780183427</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554780183427</updated>
+    </task>
+    <task id="LOCAL-00010" summary="correct .sql backup">
+      <created>1554784732696</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554784732696</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updating table and .py script">
+      <created>1554834395481</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1554834395481</updated>
+    </task>
+    <task id="LOCAL-00012" summary="adding status variable to database and to .py script">
+      <created>1554835115922</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1554835115922</updated>
+    </task>
+    <task id="LOCAL-00013" summary="editing db and .py archive structures">
+      <created>1554858393476</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1554858393476</updated>
+    </task>
+    <task id="LOCAL-00014" summary="editing db and .py archive structures">
+      <created>1554858406791</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1554858406791</updated>
+    </task>
+    <task id="LOCAL-00015" summary="improving Gui functionality">
+      <created>1554909153389</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1554909153389</updated>
+    </task>
+    <task id="LOCAL-00016" summary="improving Gui functionality">
+      <created>1554909193822</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554909193822</updated>
+    </task>
+    <task id="LOCAL-00017" summary="cleaning warnings">
+      <created>1554909355874</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554909355874</updated>
+    </task>
+    <task id="LOCAL-00018" summary="deleting useless code">
+      <created>1554909639904</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554909639904</updated>
+    </task>
+    <task id="LOCAL-00019" summary="improving GUI">
+      <created>1554911186764</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1554911186764</updated>
+    </task>
+    <task id="LOCAL-00020" summary="improving GUI">
+      <created>1555012578716</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1555012578716</updated>
+    </task>
+    <task id="LOCAL-00021" summary="definitive use os DB and GUI">
+      <created>1555018970529</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1555018970529</updated>
+    </task>
+    <task id="LOCAL-00022" summary="definitive use os DB and GUI">
+      <created>1555019003402</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1555019003402</updated>
+    </task>
+    <task id="LOCAL-00023" summary="maximizing menu window automatically">
+      <created>1555038044749</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1555038044749</updated>
+    </task>
+    <task id="LOCAL-00024" summary="improving delete function in class clients">
+      <created>1555186931039</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1555186931039</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ID organizing method">
+      <created>1555274135959</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1555274135959</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fixing spacing">
+      <created>1555274218861</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1555274218861</updated>
+    </task>
+    <task id="LOCAL-00027" summary="deleting useless stuff">
+      <created>1555435985981</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1555435985981</updated>
+    </task>
+    <task id="LOCAL-00028" summary="rebuilding the project">
+      <created>1555643474328</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1555643474329</updated>
+    </task>
+    <task id="LOCAL-00029" summary="deleting useless files">
+      <created>1555643592579</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1555643592579</updated>
+    </task>
+    <task id="LOCAL-00030" summary="defining privileges">
+      <created>1555646745969</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1555646745970</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixing some warnings">
+      <created>1555647539310</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1555647539310</updated>
+    </task>
+    <task id="LOCAL-00032" summary="redoing windows">
+      <created>1555720169372</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1555720169372</updated>
+    </task>
+    <task id="LOCAL-00033" summary="tests and fixing">
+      <created>1555970849908</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1555970849908</updated>
+    </task>
+    <task id="LOCAL-00034" summary="creating the edit class and some functions">
+      <created>1556061320935</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1556061320935</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fields show the selected user data when edit mode = on...&#10;please see line 166">
+      <created>1556078873042</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1556078873043</updated>
+    </task>
+    <task id="LOCAL-00036" summary="update function done">
+      <created>1556130492033</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1556130492033</updated>
+    </task>
+    <task id="LOCAL-00037" summary="update button text">
+      <created>1556154611218</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1556154611218</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fixing table cretions and type real to float, which can specify data volume">
+      <created>1556226156410</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1556226156410</updated>
+    </task>
+    <task id="LOCAL-00039" summary="now we can see usernames and full names in users list">
+      <created>1556227120010</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1556227120010</updated>
+    </task>
+    <task id="LOCAL-00040" summary="updating DB">
+      <created>1556227828837</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1556227828837</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fixing split() in System.py">
+      <created>1556283529689</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1556283529689</updated>
+    </task>
+    <task id="LOCAL-00042" summary="-updating WindowLogin(adding 'Remember me' radio Button&#10;-changing setupUi to __init__()&#10;-closing UsersWindow always when editing or registering, although when update or register the same will be reopened&#10;-">
+      <created>1556330483668</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1556330483668</updated>
+    </task>
+    <task id="LOCAL-00043" summary="making a QmessageBox for updating warnings">
+      <created>1556394015562</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1556394015562</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="248574000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497545" weight="0.19802731" />
+      <window_info id="Structure" order="1" sideWeight="0.502455" side_tool="true" weight="0.16111952" />
+      <window_info id="Favorites" order="2" sideWeight="0.502455" side_tool="true" weight="0.16111952" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924356" weight="0.3371522" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.44844517" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.61865795" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49621785" weight="0.95090014" />
+      <window_info anchor="bottom" id="GitLabIntegration" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50378215" side_tool="true" weight="0.95090014" />
+      <window_info anchor="bottom" id="Python Console" order="15" sideWeight="0.49621785" weight="0.4680851" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.16187595" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.3290469" />
+      <window_info anchor="right" id="R Packages" order="6" weight="0.32980332" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497545" weight="0.1913767" />
+      <window_info id="Structure" order="1" sideWeight="0.502455" side_tool="true" weight="0.16111952" />
+      <window_info id="Favorites" order="2" sideWeight="0.502455" side_tool="true" weight="0.16111952" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924356" visible="true" weight="0.26841244" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.44844517" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49621785" weight="0.95090014" />
+      <window_info anchor="bottom" id="GitLabIntegration" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50378215" side_tool="true" weight="0.95090014" />
+      <window_info anchor="bottom" id="Python Console" order="15" sideWeight="0.49621785" weight="0.4680851" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.15733737" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.3290469" />
+      <window_info anchor="right" id="R Packages" order="6" weight="0.32980332" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="RELOAD_CONTEXT" value="false" />
+    <MESSAGE value="deleting useless code" />
+    <MESSAGE value="improving GUI" />
+    <MESSAGE value="Merge branch 'develop+gui+db' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/PyManager.iml&#10;#&#9;.idea/modules.xml" />
+    <MESSAGE value="definitive use os DB and GUI" />
+    <MESSAGE value="maximizing menu window automatically" />
+    <MESSAGE value="improving delete function in class clients" />
+    <MESSAGE value="ID organizing method" />
+    <MESSAGE value="fixing spacing" />
+    <MESSAGE value="deleting useless stuff" />
+    <MESSAGE value="rebuilding the project" />
+    <MESSAGE value="deleting useless files" />
+    <MESSAGE value="defining privileges" />
+    <MESSAGE value="fixing some warnings" />
+    <MESSAGE value="redoing windows" />
+    <MESSAGE value="tests and fixing" />
+    <MESSAGE value="creating the edit class and some functions" />
+    <MESSAGE value="fields show the selected user data when edit mode = on...&#10;please see line 166" />
+    <MESSAGE value="update function done" />
+    <MESSAGE value="update button text" />
+    <MESSAGE value="fixing table cretions and type real to float, which can specify data volume" />
+    <MESSAGE value="now we can see usernames and full names in users list" />
+    <MESSAGE value="updating DB" />
+    <MESSAGE value="fixing split() in System.py" />
+    <MESSAGE value="-updating WindowLogin(adding 'Remember me' radio Button&#10;-changing setupUi to __init__()&#10;-closing UsersWindow always when editing or registering, although when update or register the same will be reopened&#10;-" />
+    <MESSAGE value="making a QmessageBox for updating warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="making a QmessageBox for updating warnings" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/System+gui.py" />
+    <entry file="file://$PROJECT_DIR$/information_schema_INNODB_CMP_PER_INDEX.sql" />
+    <entry file="file://$PROJECT_DIR$/information_schema_INNODB_CMPMEM_RESET.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/87172e3e-dcad-46dc-807d-8d1a3a2a1808/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/mysqldumps/dump1.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/618881ac-fd86-465f-ab60-b35085657bfc/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Qtdesigner/window.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adm.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/214a3af1-0544-4824-997a-caf30fda327e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/31841ce9-f6aa-4ce1-bdec-969ba5a49ea1/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/mysql/connector/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/baa96663-569a-4dad-9b95-b78b87732fb7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBbackup.py" />
+    <entry file="file://$PROJECT_DIR$/show_tables.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/81756784-1f54-46bb-a3ff-3de4fd28b810/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9d4ecc3-71c4-45b8-b11d-1855fe8dcb42/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/81756784-1f54-46bb-a3ff-3de4fd28b810/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/85550c0e-93aa-48c2-89e5-b11993e111b2/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://08e7cf9a-5534-440f-8d91-3d750c53cb91/schema/register/table/clients" />
+    <entry file="file://$PROJECT_DIR$/window.py" />
+    <entry file="file://$PROJECT_DIR$/menu.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/sqlite3/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://08e7cf9a-5534-440f-8d91-3d750c53cb91/schema/register/table/clients.sql" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_03_19.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_03_16.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_03_21.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_03_26.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_03_28.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_04_02.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_04_04.py" />
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/win.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_04_09.py" />
+    <entry file="file://$PROJECT_DIR$/winodws_ui/window_login.py" />
+    <entry file="file://$PROJECT_DIR$/window_employees.py" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1570" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log_PyManager.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mydb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="60" column="63" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/../Lpaa/aula_2019_04_16.py" />
+    <entry file="file://$PROJECT_DIR$/window_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <folding>
+            <element signature="e#200#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#201#243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBbackup.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
+          <folding>
+            <element signature="e#201#243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding>
+            <element signature="e#204#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e7cf9a-5534-440f-8d91-3d750c53cb91/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Untitled-1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="83" column="63" lean-forward="true" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
