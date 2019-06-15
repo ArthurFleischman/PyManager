@@ -124,3 +124,41 @@
 [2019-05-14|19:27:04]> app initialized.
 [2019-05-14|19:27:06]> (acf) access allowed.
 [2019-05-14|19:27:10]> (acf) edited birthday = 20000622, cpf_cnpj = 13382481464, status = adm, company = Apple.
+[2019-06-14|18:17:36]> conection to server successful.
+[2019-06-14|18:17:36]> app initialized.
+[2019-06-14|18:17:40]> (acf) access allowed.
+[2019-06-14|18:18:06]> (acf) edited birthday = 20000622, cpf_cnpj = 13382481464, status = adm, company = Apple.
+[2019-06-14|18:18:22]> (acf) registered (a) set: birthday = 20000101, cpf_cnpj = 12345567812, password = a, status = employee, company = a.
+[2019-06-14|18:11:15]> conection to server successful.
+[2019-06-14|18:11:16]> app initialized.
+[2019-06-14|18:11:21]> (acf) access denied.
+[2019-06-14|18:11:24]> (acf) access allowed.
+[2019-06-14|18:25:57]> conection to server successful.
+[2019-06-14|18:25:57]> app initialized.
+[2019-06-14|18:26:00]> (acf) access allowed.
+[2019-06-14|18:26:18]> (acf) registered (a) set: birthday = 20000101, cpf_cnpj = 12345678965, password = a, status = employee, company = a.
+[2019-06-14|18:27:23]> conection to server successful.
+[2019-06-14|18:27:24]> app initialized.
+[2019-06-14|18:27:26]> (acf) access allowed.
+[2019-06-14|18:29:49]> conection to server successful.
+[2019-06-14|18:29:49]> app initialized.
+[2019-06-14|18:29:54]> (acf) access allowed.
+[2019-06-14|18:30:51]> conection to server successful.
+[2019-06-14|18:30:51]> app initialized.
+[2019-06-14|18:30:55]> (acf) access allowed.
+[2019-06-14|18:31:17]> (acf) registered (a) set: birthday = 20000101, cpf_cnpj = 12234567854, password = a, status = adm, company = a.
+[2019-06-14|18:31:51]> (acf) registered (ae) set: birthday = 20000101, cpf_cnpj = 55566677798, password = ae, status = employee, company = aed.
+[2019-06-14|18:49:51]> conection to server successful.
+[2019-06-14|18:49:52]> app initialized.
+[2019-06-14|18:50:10]> (acf) access allowed.
+[2019-06-14|18:50:27]> (acf) edited birthday = 20000622, cpf_cnpj = 13382481464, status = adm, company = Apple1.
+[2019-06-14|18:53:40]> conection to server successful.
+[2019-06-14|18:53:40]> app initialized.
+[2019-06-14|18:53:43]> (acf) access allowed.
+[2019-06-14|19:50:39]> conection to server successful.
+[2019-06-14|19:50:40]> app initialized.
+[2019-06-14|19:50:45]> (acf) access allowed.
+[2019-06-14|19:51:10]> (acf) registered (b) set: birthday = 20000101, cpf_cnpj = 12234567843, password = b, status = adm, company = b.
+[2019-06-14|19:51:24]> (acf) deleted user "b"".
+[2019-06-14|20:09:00]> conection to server successful.
+[2019-06-14|20:09:01]> app initialized.
