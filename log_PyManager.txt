@@ -162,3 +162,18 @@
 [2019-06-14|19:51:24]> (acf) deleted user "b"".
 [2019-06-14|20:09:00]> conection to server successful.
 [2019-06-14|20:09:01]> app initialized.
+[2019-06-14|22:16:52]> conection to server successful.
+[2019-06-14|22:16:53]> app initialized.
+[2019-06-14|22:16:58]> (acf) access allowed.
+[2019-06-14|22:17:14]> (acf) deleted user 'lts'.
+[2019-06-14|22:34:39]> conection to server successful.
+[2019-06-14|22:34:39]> app initialized.
+[2019-06-14|22:34:46]> (acf) access allowed.
+[2019-06-20|17:27:02]> conection to server successful.
+[2019-06-20|17:27:04]> app initialized.
+[2019-06-20|17:28:03]> (acf) access allowed.
+[2019-06-20|17:51:37]> conection to server successful.
+[2019-06-20|17:51:41]> app initialized.
+[2019-06-20|17:51:51]> (acf) access allowed.
+[2019-06-20|17:52:02]> (acf) loged off.
+[2019-06-20|17:52:07]> (acf) access allowed.

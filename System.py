@@ -79,7 +79,7 @@ class Controller(QApplication):
             self.WindowUsers = Controller.Users()
 
         def logoff(self):
-            mylog.write(f'({self.title}) loged off\n')
+            mylog.write(f'({self.title}) logged off')
             app.closeAllWindows()
             LoginWindow.win.ti_password.setText('')
             if not LoginWindow.checked:
@@ -125,7 +125,7 @@ class Controller(QApplication):
                 uid = mydb.select('id', f"users where username = '{item[0]}'")
                 mydb.delete('users', f"{uid[0][0]}")
                 mylog.write(
-                    f'({LoginWindow.MenuWindow.title}) deleted user "{item[0]}""')
+                    f"({LoginWindow.MenuWindow.title}) deleted user '{item[0]}'")
                 self.refresh()
             else:
                 QMessageBox.warning(None, 'ERROR', 'no clients to delete')
@@ -322,7 +322,6 @@ class Controller(QApplication):
             self.win.dateEdit.setDate(self.data[0][4])
             self.win.lineEdit_6.setText(self.data[0][5])
             self.win.lineEdit_8.setText(str(self.data[0][6]))
-            print(self.data[0][5])
 
         def update(self):
             name = self.win.lineEdit.text()
