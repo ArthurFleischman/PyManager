@@ -12,7 +12,7 @@ import sys
 import Mydb
 status = ('adm', 'employee', 'intern', 'undefined')
 
-
+# comentario teste
 class Log:
     def __init__(self):
         self.log = open('log_PyManager.txt', 'a+')
